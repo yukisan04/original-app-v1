@@ -1,15 +1,35 @@
-/*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
- * Any CSS (and SCSS, if configured) file within this directory, lib/assets/stylesheets, or any plugin's
- * vendor/assets/stylesheets directory can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the bottom of the
- * compiled file so the styles you add here take precedence over styles defined in any other CSS
- * files in this directory. Styles in this file should be added after the last require_* statement.
- * It is generally better to create a new file per style scope.
- *
- *= require_tree .
- *= require_self
- */
+/* 基本のボタンスタイル */
+.btn {
+  padding: 10px 15px;
+  border: none;
+  border-radius: 4px;
+  text-decoration: none;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease; /* スムーズな色の変化とアニメーション */
+}
+
+/* 青いボタンのスタイル */
+.btn-primary {
+  background-color: blue; /* 青 */
+  color: white; /* テキストの色 */
+}
+
+/* オレンジのボタンのスタイル */
+.btn-warning {
+  background-color: orange; /* オレンジ */
+  color: white; /* テキストの色 */
+  padding: 12px 20px; /* 縦の余白を少し増やし、横の余白も増やす */
+  font-size: 18px; /* フォントサイズを少し大きく */
+  border-radius: 6px; /* ボタンの角を少し丸くする */
+}
+/* ボタンにホバー効果を追加 */
+.btn:hover {
+  opacity: 0.8; /* ホバー時に少し透明に */
+  transform: translateY(-2px); /* ホバー時にボタンが上に動く */
+}
+
+/* アクティブ効果を追加 */
+.btn:active {
+  transform: translateY(0); /* クリック時に戻す */
+}

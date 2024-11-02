@@ -1,0 +1,93 @@
+/* ヘッダーのボタンのスタイル */
+.header-buttons {
+  position: absolute; /* 絶対配置 */
+  top: 10px; /* 上からの距離 */
+  right: 10px; /* 右からの距離 */
+  z-index: 10; /* ボタンを前面に表示 */
+}
+
+/* 参加者セクションのスタイル */
+.participants {
+  background-image: url('image.jpg'); /* 元の森の画像のURLに戻します */
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed; /* 背景を固定する */
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  position: relative; /* 相対配置に変更 */
+  height: calc(100vh - 60px); /* ヘッダーの高さを引いた全画面表示 */
+  overflow: auto; /* コンテンツが多い場合はスクロール可能に */
+}
+
+/* 参加者名リストのスタイル */
+.participants h3 {
+  color: white; /* タイトルの文字色を白に */
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* 文字に影をつけて視認性を向上 */
+  font-size: 24px; /* フォントサイズを大きく */
+  margin-bottom: 15px; /* タイトルの下に余白を追加 */
+  font-family: 'Comic Sans MS', cursive, sans-serif; /* フォントを元に戻します */
+}
+
+/* 参加者名リスト */
+.participants ul {
+  padding-left: 0; /* 左側のパディングを無くして点を消す */
+  list-style-type: none; /* デフォルトのリストスタイルを無効化 */
+}
+
+.participants li {
+  margin-bottom: 10px; /* 下部余白 */
+  color: white; /* 名前の文字色を白に */
+  font-size: 24px; /* フォントサイズを大きく */
+  background-color: rgba(0, 0, 0, 0.5); /* 半透明の黒背景を追加して文字を見やすくする */
+  padding: 10px; /* パディングを追加 */
+  border-radius: 5px; /* 角を丸くする */
+  transition: background-color 0.3s; /* ホバー時の背景色変化を滑らかに */
+}
+
+.btn-warning {
+  background-color: orange; /* オレンジの背景色 */
+  color: white; /* テキストの色 */
+  padding: 10px 15px; /* ボタンのパディング */
+  border: none; /* ボーダーを無しに */
+  border-radius: 5px; /* 角を丸くする */
+  text-decoration: none; /* 下線を無しに */
+  transition: background-color 0.3s; /* ホバー時の背景色の変化を滑らかに */
+}
+
+.btn-warning:hover {
+  background-color: darkorange; /* ホバー時の背景色 */
+}
+
+/* ルームに戻るボタンのスタイル */
+.room-return-button {
+  position: fixed; /* 固定配置 */
+  bottom: 20px; /* ボタンを下に配置 */
+  right: 20px; /* ボタンを右に配置 */
+}
+
+.btn-return {
+  background-color: rgba(255, 174, 108, 0.8); /* 半透明の白背景 */
+  border: none; /* 枠線を消す */
+  border-radius: 5px; /* ボタンの角を丸める */
+  padding: 10px 20px; /* ボタンの内側の余白 */
+  font-size: 16px; /* フォントサイズ */
+  color: #333; /* ボタンの文字色 */
+  cursor: pointer; /* カーソルをポインターに */
+  transition: background-color 0.3s, transform 0.2s; /* ホバー時の変化にトランジションを追加 */
+}
+
+.btn-return:hover {
+  background-color: rgb(255, 112, 45); /* ホバー時に背景色を白に変更 */
+  transform: scale(1.05); /* ホバー時にボタンを少し大きくする */
+}
+
+/* 全体の背景スタイル */
+body {
+  margin: 0; /* デフォルトのマージンを削除 */
+  height: 100vh; /* 高さを全画面に設定 */
+  background-image: url('image.jpg'); /* 背景画像のURL */
+  background-size: cover; /* 画像を全体に広げる */
+  background-position: center; /* 画像を中央に配置 */
+  background-attachment: fixed; /* スクロールしても背景を固定 */
+}

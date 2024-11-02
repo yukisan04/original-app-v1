@@ -1,0 +1,261 @@
+/* 全体の背景設定 */
+body {
+  background-color: #f5f5f5;
+  font-family: Arial, sans-serif;
+  padding: 20px;
+  position: relative;
+  min-height: 100vh; /* ページ全体の高さを確保 */
+  padding-bottom: 120px; /* 参加者一覧の分の余白を確保 */
+}
+
+/* ルームタイトルのスタイル */
+h1 {
+  text-align: center;
+  color: #333;
+  background-color: #f0f8ff; /* 淡い青で雲のような色合い */
+  padding: 15px 30px;
+  border-radius: 50px; /* 丸みを持たせて雲のような形状に */
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+  display: inline-block;
+}
+
+/* 在庫リストヘッダーのスタイル */
+.room-details h2 {
+  background-color: #ffcce7; /* 淡いピンクの背景 */
+  color: #ff69b4; /* 文字色を濃いピンクに設定 */
+  font-family: 'Comic Sans MS', cursive, sans-serif;
+  padding: 10px 20px;
+  border-radius: 15px;
+  text-align: center;
+  box-shadow: 0px 4px 8px rgba(255, 182, 193, 0.5);
+}
+
+/* 在庫リストのスタイル */
+.stock-list {
+  list-style: none;
+  padding: 0;
+}
+
+/* 在庫アイテムのスタイル */
+.stock-info {
+  text-align: center; /* 商品名を中央揃え */
+}
+
+.stock-item {
+  background: #e3f2fd;
+  border-radius: 4px;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+/* ボタンの共通スタイル */
+.btn {
+  padding: 10px 15px;
+  border-radius: 5px;
+  text-decoration: none;
+  color: white;
+  transition: background-color 0.3s;
+  height: 40px;
+  width: auto; /* ボタンの幅を自動に設定 */
+}
+
+/* 在庫を追加ボタンのスタイル */
+.btn-warning {
+  background-color: #FFA500; /* オレンジ色 */
+}
+
+.btn-warning:hover {
+  background-color: #FF8C00; /* ホバー時の濃いオレンジ色 */
+}
+
+/* 更新ボタンのスタイル */
+.btn-update {
+  background-color: #4CAF50; /* 緑色の背景 */
+}
+
+.btn-update:hover {
+  background-color: #45a049; /* ホバー時の色 */
+}
+
+/* 編集ボタンのスタイル */
+.btn-edit {
+  height: 15px;
+  line-height: 20px; /* 高さに合わせて行の高さを設定し、テキストを中央に配置 */
+  font-size: 13px;
+  border: 2px solid black; /* 黒い枠線 */
+  background-color: #007BFF; /* 明るい青の背景 */
+}
+
+.btn-edit:hover {
+  background-color: #5bc0de; /* ホバー時の明るい青 */
+}
+
+/* 削除ボタンのスタイル */
+.btn-delete {
+  border: 2px solid black; /* 黒い枠線 */
+  background-color: #dc3545; /* 赤色の背景 */
+}
+
+.btn-delete:hover {
+  background-color: #c82333; /* ホバー時の色 */
+}
+
+/* 参加者一覧ボタンのスタイル */
+.btn-participants {
+  height: 15px;
+  line-height: 20px; /* 高さに合わせて行の高さを設定し、テキストを中央に配置 */
+  font-size: 13px;
+  border: 2px solid black; /* 黒い枠線 */
+  background-color: purple; /* 紫色の背景 */
+}
+
+.btn-participants:hover {
+  background-color: darkviolet; /* ホバー時の色 */
+}
+
+/* 在庫詳細のスタイル */
+.stock-details {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 100px;
+}
+
+/* 在庫画像のスタイル */
+.stock-image {
+  width: 100px;
+  height: auto;
+  transition: transform 0.3s;
+  cursor: pointer;
+  margin-top: 15px; /* 上にマージンを追加して下にずらす */
+}
+
+
+.stock-image:hover {
+  transform: scale(1.5);
+}
+
+/* 検索ボックスのスタイル */
+.search-box {
+  padding: 10px;
+  background-color: #ffccff; /* 明るいピンク */
+  border: 1px solid #ff99cc; /* 濃いピンクのボーダー */
+  border-radius: 5px; /* 角を丸くする */
+  width: 200px; /* 幅を指定 */
+}
+
+
+/* quantityフィールドのスタイル */
+.quantity-field {
+  width: 50px; /* 幅を指定 */
+}
+
+/* ボタン配置のスタイル */
+.add-stock {
+  text-align: center; /* ボタンを中央揃え */
+  margin-top: 20px; /* 上部に余白を追加 */
+}
+
+.action-buttons {
+  display: flex;
+  justify-content: center; /* ボタンを横並びにし中央揃え */
+  gap: 10px; /* ボタン間の間隔 */
+}
+
+/* 固定ボタンのスタイル */
+.fixed-buttons {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  display: flex;
+  flex-direction: row; /* 横に並べる */
+  gap: 10px; /* ボタン間の間隔 */
+}
+
+/* ソートボタンのスタイル */
+.btn-sort {
+  padding: 12px 18px; /* 内側の余白を少し増やす */
+  border-radius: 6px; /* 角を少し丸くする */
+  text-decoration: none;
+  color: white;
+  font-weight: bold; /* フォントを太くする */
+  margin-left: 5px; /* ボタンの間隔を空ける */
+  font-size: 16px; /* フォントサイズを大きくする */
+  transition: background-color 0.3s ease; /* ホバー時のスムーズな変化 */
+}
+
+/* ソートボタンのスタイル */
+.btn-sort {
+  padding: 12px 18px; /* 内側の余白 */
+  border-radius: 6px; /* 角を丸くする */
+  text-decoration: none;
+  font-weight: bold; /* フォントを太くする */
+  margin-left: 5px; /* ボタンの間隔を空ける */
+  font-size: 16px; /* フォントサイズ */
+  transition: background-color 0.3s ease; /* ホバー時のスムーズな変化 */
+}
+
+/* 在庫が少ない順のボタン */
+.low-stock {
+  background-color: #ff8e6b; /* 明るいオレンジ */
+  color: #2c2c2c; /* 濃いグレー */
+}
+
+.low-stock:hover {
+  background-color: #ff6f4f; /* 濃いオレンジ */
+}
+
+/* 在庫が多い順のボタン */
+.high-stock {
+  background-color: #7aff99; /* 明るい緑 */
+  color: #2c2c2c; /* 濃いグレー */
+}
+
+.high-stock:hover {
+  background-color: #5fdc7c; /* 濃い緑 */
+}
+
+/* 新しい順と古い順のボタンスタイル */
+.btn-sort .newest {
+  background-color: #5cb85c; /* 緑 */
+}
+
+.btn-sort .oldest {
+  background-color: #5bc0de; /* 水色 */
+}
+
+.btn-sort .newest:hover,
+.btn-sort .oldest:hover {
+  background-color: #4cae4c; /* ホバー時の緑 */
+}
+
+.btn-sort {
+  background-color: #f0e68c; /* 背景色を薄い黄色に */
+  color: #333; /* テキスト色を濃い色に */
+  border: 1px solid #ccc; /* 枠線の色 */
+  border-radius: 5px; /* 角を丸くする */
+  padding: 10px; /* 内側の余白 */
+  font-size: 16px; /* フォントサイズ */
+  cursor: pointer; /* ポインタを変える */
+}
+
+.btn-sort:hover {
+  background-color: #e6db73; /* ホバー時の背景色 */
+}
+
+.btn-secondary {
+  height: 15px;
+  line-height: 20px; /* 高さに合わせて行の高さを設定し、テキストを中央に配置 */
+  font-size: 13px;
+  border: 2px solid black; /* 黒い枠線 */
+  background-color: #00BFFF; /* 水色 */
+  color: white; /* テキストの色 */
+  padding: 10px 20px; /* パディングを追加 */
+  border-radius: 5px; /* 角を丸める */
+  text-decoration: none; /* 下線を削除 */
+  display: inline-block; /* インラインブロックにする */
+}
+
+.btn-secondary:hover {
+  background-color: #1E90FF; /* ホバー時の色を少し濃くする */
+}

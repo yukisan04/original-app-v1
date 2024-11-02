@@ -1,0 +1,50 @@
+<%= stylesheet_link_tag 'rooms', media: 'all', 'data-turbo-track': 'reload' %>
+
+<header>
+  <% if current_user %>
+    <h2><%= current_user.nickname %>さん、お帰りなさい！</h2>
+    <%= link_to 'アカウント編集', edit_user_registration_path, class: 'btn btn-warning' %>
+  <% end %>
+  <h1>ルーム一覧</h1>
+  <%= link_to '新しいルームを作成', new_room_path, class: 'btn btn-warning' %>
+</header>
+
+<div class="join-room">
+  <h2>ルームに参加する</h2>
+  <% if flash[:alert] %>
+    <div class="alert alert-danger"><%= flash[:alert] %></div>
+  <% end %>
+  <%= form_with(url: join_rooms_path, method: :post) do |form| %>
+    <div class="form-group">
+      <%= form.label :room_name, 'ルーム名', class: 'form-label' %>
+      <%= form.text_field :room_name, class: 'form-control', placeholder: 'ルーム名を入力', required: true %>
+    </div>
+    <div class="form-group">
+      <%= form.label :password, 'パスワード', class: 'form-label' %>
+      <%= form.password_field :password, class: 'form-control', placeholder: 'パスワードを入力', required: true %>
+    </div>
+    <%= form.submit '参加する', class: 'btn btn-primary' %>
+  <% end %>
+</div>
+
+<h2>参加しているルーム</h2>
+<% if @rooms.any? %>
+  <% @rooms.each do |room| %>
+    <% if room.password_digest.present? && room.memberships.exists?(user_id: current_user.id) %>
+      <div class="room">
+        <h3><%= room.name %></h3>
+        <p>このルームに参加しています。</p>
+        <%= link_to 'ルームに参加', room_path(room), class: 'btn btn-primary' %>
+      </div>
+    <% elsif room.password_digest.present? %>
+      <!-- パスワード保護されているルームは表示しない -->
+    <% else %>
+      <div class="room">
+        <h3><%= room.name %></h3>
+        <!-- 参加していないルームには参加ボタンを表示しない -->
+      </div>
+    <% end %>
+  <% end %>
+<% else %>
+  <p>参加しているルームはありません。</p>
+<% end %>

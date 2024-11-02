@@ -1,0 +1,10 @@
+ja:
+  activerecord:
+    errors:
+      models:
+        room:
+          attributes:
+            name:
+              blank: "を入力してください"
+            password:
+              blank: "を入力してください"

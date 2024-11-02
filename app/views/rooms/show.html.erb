@@ -1,0 +1,64 @@
+<%= stylesheet_link_tag 'rooms3', media: 'all', 'data-turbo-track': 'reload' %>
+<h1><%= @room.name %>のルーム</h1>
+
+<div class="room-details">
+  <h2>在庫リスト</h2>
+
+  <div class="stock-controls">
+    <!-- 検索ボックス -->
+    <input type="text" id="search" placeholder="在庫を検索..." class="search-box">
+    <%= link_to '在庫を追加', new_room_stock_path(@room), class: "btn btn-warning" %>
+
+    <select id="sort-options" class="btn btn-sort">
+      <option value="low-stock" class="low-stock">在庫が少ない順に表示</option>
+      <option value="high-stock" class="high-stock">在庫が多い順に表示</option>
+      <option value="updated" class="updated">更新順に表示</option> <!-- 更新順を追加 -->
+    </select>
+  </div>
+
+  <ul class="stock-list" id="stock-list">
+    <% if @room.stocks.empty? %>
+      <li>在庫情報なし</li>
+    <% else %>
+      <% @room.stocks.each do |stock| %>
+        <% if stock.product_name != "例: りんご" %>
+          <li class="stock-item" data-updated="<%= stock.updated_at %>"> <!-- updated_atをデータ属性として追加 -->
+            <div class="stock-details">
+              <div class="stock-image">
+                <% if stock.image.attached? %>
+                  <%= image_tag(stock.image, alt: stock.product_name, class: "stock-image") %>
+                <% else %>
+                  <%= image_tag("default_image.png", alt: "デフォルト画像", class: "stock-image") %>
+                <% end %>
+              </div>
+              <div class="stock-info">
+                <strong><%= stock.product_name %></strong>
+                <%= form_with(model: stock, url: room_stock_path(@room, stock), local: true) do |form| %>
+                  <div class="stock-quantity-status">
+                    数量: <%= form.number_field :quantity, value: stock.quantity, class: "quantity-field" %>
+                    状態: <%= stock.stock_status.present? ? stock.stock_status : '未設定' %>
+                    <%= form.submit '更新', class: "btn btn-update" %>
+                  </div>
+                <% end %>
+              </div>
+            </div>
+            <div class="stock-actions">
+              <div class="action-buttons">
+                <%= link_to '編集', edit_room_stock_path(@room, stock), class: "btn btn-edit" %>
+                <%= button_to '削除', [@room, stock], method: :delete, class: "btn btn-delete" %>
+              </div>
+            </div>
+          </li>
+        <% end %>
+      <% end %>
+    <% end %>
+  </ul>
+</div>
+
+<div class="fixed-buttons">
+  <%= link_to 'ルーム一覧に戻る', rooms_path, class: "btn btn-secondary fixed" %>
+  <%= link_to '参加者一覧', room_participants_path(@room), class: "btn btn-participants fixed" %>
+  <%= button_to '部屋を削除', @room, method: :delete, class: "btn btn-delete fixed" %>
+</div>
+
+<%= javascript_include_tag 'stocks', 'data-turbo-track': 'reload' %>

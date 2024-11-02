@@ -1,0 +1,241 @@
+/* 全体のスタイル */
+body {
+  background: linear-gradient(135deg, #6b6f82, #a2a6c6); /* グラデーション背景 */
+  font-family: Arial, sans-serif;
+}
+
+/* ヘッダーのスタイル */
+header {
+  background-color: #d0f0c0; /* 薄緑の背景色 */
+  padding: 20px; /* 上下左右の余白 */
+  border-bottom: 2px solid #ccc; /* 下に薄いボーダー */
+}
+
+header h1 {
+  font-size: 28px; /* 大きめのフォントサイズ */
+  margin: 10px 0; /* 上下のマージン */
+  color: #4CAF50; /* 緑色のタイトル */
+}
+
+header .header-buttons {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  display: flex; /* ボタンを横に並べるためにflexboxを使用 */
+  gap: 10px; /* ボタン間のスペースを調整 */
+}
+
+/* ボタンのスタイル */
+.btn {
+  padding: 10px 15px; /* ボタンのパディング */
+  border-radius: 5px; /* 角を丸くする */
+  text-decoration: none; /* 下線を無しに */
+  color: white; /* テキストの色を白にする */
+  transition: background-color 0.3s; /* ホバー時の背景色の変化を滑らかに */
+}
+
+.btn-primary {
+  background-color: #007bff; /* ボタンの背景色 */
+}
+
+.btn-primary:hover {
+  background-color: #0056b3; /* ホバー時の背景色 */
+  transform: scale(1.05); /* ホバー時に少し拡大 */
+}
+
+.btn-warning {
+  background-color: orange; /* オレンジの背景色 */
+}
+
+.btn-warning:hover {
+  background-color: darkorange; /* ホバー時の背景色 */
+}
+
+.btn-danger {
+  background-color: #ff5a67; /* 薄い赤の背景 */
+  color: #721c24; /* テキストの色 */
+}
+
+.btn-danger:hover {
+  background-color: #f5c6cb; /* ホバー時の薄い赤 */
+}
+
+/* フォームスタイル */
+.form-group {
+  margin-bottom: 15px; /* 各フォームグループの下に余白 */
+}
+
+.form-group label,
+.form-group .form-label {
+  font-weight: bold; /* 太字 */
+  color: #555; /* テキストカラー */
+  display: block; /* ブロック要素にする */
+  margin-bottom: 5px; /* ラベルと入力フィールドの間に余白 */
+}
+
+.form-control {
+  border: 1px solid #ccc; /* ボーダー */
+  border-radius: 4px; /* 角を丸くする */
+  padding: 10px; /* パディング */
+  width: 100%; /* 幅を100%にする */
+  box-sizing: border-box; /* ボックスのサイズを調整 */
+  transition: border-color 0.3s; /* ホバー時のトランジション */
+}
+
+.form-control:focus {
+  border-color: #007bff; /* フォーカス時のボーダーカラー */
+  outline: none; /* アウトラインを消す */
+}
+
+/* ルーム一覧のリストのスタイル */
+ul {
+  list-style-type: none; /* リストマーカーを非表示 */
+  padding: 0; /* パディングを削除 */
+}
+
+.room {
+  position: relative; /* 相対位置を設定 */
+  display: inline-block; /* インラインブロックで配置 */
+  padding: 10px; /* 内側の余白 */
+  margin: 10px; /* 外側の余白 */
+  background-color: rgba(255, 255, 255, 0.8); /* 背景を薄く */
+  border-radius: 20px; /* 角を丸く */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* 影を付ける */
+}
+
+.room::before {
+  content: '';
+  position: absolute;
+  top: -10px;
+  left: -10px;
+  width: 100%;
+  height: 100%;
+  background: url('path/to/cloud-image.png') no-repeat center center; /* 雲の画像を背景に設定 */
+  background-size: cover; /* 画像をカバーするように設定 */
+  z-index: -1; /* 背景にするために背面に配置 */
+  filter: blur(10px); /* ぼかし効果を追加 */
+}
+
+.room:hover {
+  background-color: #f0f8ff; /* ホバー時の背景色 */
+}
+
+.room li {
+  font-size: 20px; /* フォントサイズ */
+  color: #333; /* テキストの色 */
+}
+
+/* アラートメッセージのスタイル */
+.alert {
+  background-color: #f8d7da; /* アラート背景色 */
+  color: #721c24; /* アラートテキストカラー */
+  padding: 15px; /* 内側の余白 */
+  border: 1px solid #f5c6cb; /* ボーダー */
+  border-radius: 5px; /* 角を丸くする */
+  margin-bottom: 20px; /* 下の余白 */
+}
+
+/* 参加者リスト、在庫リストのスタイル */
+.participants,
+.room-details {
+  margin-bottom: 20px; /* 下にマージン */
+}
+
+/* 在庫リストの各項目 */
+.stock-item {
+  background-color: rgba(255, 255, 255, 0.8); /* 半透明の白背景 */
+  padding: 15px; /* 内側の余白を増やす */
+  margin-bottom: 15px; /* 下にマージンを増やす */
+  border-radius: 5px; /* 角を丸くする */
+  border-left: 5px solid #4CAF50; /* 左側に緑のボーダー */
+}
+
+/* ルームアクションのスタイル */
+.room-actions {
+  margin-top: 20px; /* 上にマージン */
+}
+
+/* 在庫リスト全体にスペースを追加 */
+.stock-list {
+  margin-top: 20px; /* 在庫リストの上にマージンを追加 */
+}
+
+/* 編集リンクの空間を作る */
+.stock-actions {
+  margin-top: 10px; /* 上にマージンを追加 */
+}
+
+/* ルーム参加セクションのスタイル */
+.join-room {
+  background-color: #f9f9f9; /* 背景色 */
+  border-radius: 8px; /* 角を丸くする */
+  padding: 30px; /* パディングを増やす */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15); /* 影を強くする */
+}
+
+.join-room h2 {
+  font-size: 1.8em; /* フォントサイズを大きく */
+  margin-bottom: 20px; /* 下の余白を増やす */
+  color: #333; /* テキストカラー */
+  text-align: center; /* 中央揃え */
+}
+
+/* フォームのスタイル */
+form {
+  background: rgba(255, 255, 255, 0.9); /* 半透明の白い背景 */
+  border-radius: 8px; /* 角を丸く */
+  padding: 20px; /* 内側の余白 */
+  max-width: 400px; /* フォームの最大幅 */
+  margin: 0 auto; /* 中央揃え */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* 影をつけて立体感を出す */
+}
+
+label {
+  display: block; /* ラベルをブロック要素に */
+  margin-bottom: 8px; /* ラベルの下に余白 */
+  color: #333; /* ラベルの色 */
+}
+
+input[type="text"],
+input[type="password"] {
+  width: 100%; /* 入力フィールドの幅を100%に */
+  padding: 10px; /* 内側の余白 */
+  margin-bottom: 20px; /* フィールドの下に余白 */
+  border: 1px solid #ccc; /* 枠線の色 */
+  border-radius: 4px; /* 角を少し丸く */
+  box-sizing: border-box; /* パディングとボーダーを含めたサイズ */
+}
+
+input[type="submit"] {
+  background-color: #28a745; /* 提出ボタンの色 */
+  color: white; /* テキストの色 */
+  border: none; /* ボーダーを無しに */
+  border-radius: 4px; /* 角を丸く */
+  padding: 10px; /* 内側の余白 */
+  cursor: pointer; /* カーソルをポインターに */
+  transition: background-color 0.3s; /* ホバー時の色変化を滑らかに */
+}
+
+input[type="submit"]:hover {
+  background-color: #218838; /* ホバー時の色 */
+}
+
+/* レスポンシブスタイル */
+@media (max-width: 768px) {
+  header {
+    text-align: center; /* スマホでヘッダーを中央揃え */
+  }
+
+  .header-buttons {
+    flex-direction: column; /* ボタンを縦に並べる */
+    align-items: center; /* 中央に配置 */
+  }
+
+  .room {
+    width: 90%; /* ルームの幅を90%にする */
+  }
+
+  .join-room {
+    width: 90%; /* 参加フォームの幅を90%にする */
+  }
+}

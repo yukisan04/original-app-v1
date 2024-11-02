@@ -1,0 +1,158 @@
+.btn-primary {
+  background-color: blue; /* 青 */
+  color: white; /* テキストの色 */
+}
+
+/* オレンジのボタンのスタイル */
+.btn-warning {
+  margin-top: 10px; /* ボタンの上に余白を追加して下にずらす */
+  background-color: orange; /* オレンジ */
+  color: white; /* テキストの色 */
+  padding: 12px 20px; /* 縦の余白を少し増やし、横の余白も増やす */
+  font-size: 18px; /* フォントサイズを少し大きく */
+  border-radius: 6px; /* ボタンの角を少し丸くする */
+}
+
+/* ボタンにホバー効果を追加 */
+.btn:hover {
+  opacity: 0.8; /* ホバー時に少し透明に */
+  transform: translateY(-2px); /* ホバー時にボタンが上に動く */
+}
+
+/* アクティブ効果を追加 */
+.btn:active {
+  transform: translateY(0); /* クリック時に戻す */
+}
+/* オレンジのボタンのスタイル */
+.header-buttons {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  display: flex; /* ボタンを横に並べるためにflexboxを使用 */
+  gap: 10px; /* ボタン間のスペースを調整 */
+}
+
+.btn-warning {
+  background-color: orange; /* オレンジの背景色 */
+  color: white; /* テキストの色 */
+  padding: 10px 15px; /* ボタンのパディング */
+  border: none; /* ボーダーを無しに */
+  border-radius: 5px; /* 角を丸くする */
+  text-decoration: none; /* 下線を無しに */
+  transition: background-color 0.3s; /* ホバー時の背景色の変化を滑らかに */
+}
+
+.btn-warning:hover {
+  background-color: darkorange; /* ホバー時の背景色 */
+}
+
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #f9f9f9; /* 背景色を薄いグレーに */
+  color: #333; /* テキスト色 */
+  text-align: center; /* 中央揃え */
+}
+
+header {
+  background-color: #ffcc00; /* 明るいオレンジ色 */
+  padding: 20px;
+  border-radius: 10px; /* 角を丸くする */
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* 影をつける */
+}
+
+h1 {
+  font-size: 2.5em; /* 大きな見出し */
+  margin: 0;
+}
+
+main {
+  margin: 20px;
+}
+
+h2 {
+  color: #ff6699; /* 明るいピンク色 */
+}
+
+.button-group {
+  display: flex; /* フレックスボックスで並べる */
+  justify-content: center; /* 中央揃え */
+  gap: 10px; /* ボタン間のスペース */
+  margin-top: 20px;
+}
+
+/* ボタンの共通スタイル */
+.button {
+  display: inline-block;
+  padding: 10px 20px; /* ボタンの大きさを揃える */
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  background-color: orange; /* ボタンの色 */
+  color: white; /* テキストの色 */
+  text-decoration: none; /* 下線を消す */
+  margin: 10px 0; /* 上下に余白を追加 */
+}
+
+footer {
+  margin-top: 30px;
+  font-size: 0.9em; /* フッターのフォントサイズ */
+  color: #888; /* フッターのテキスト色 */
+}
+/* ウェルカムメッセージのスタイル */
+.welcome-message {
+  background-color: #e0f7e5; /* 薄い緑色 (明るい緑) */
+  color: #d5006d; /* 太字のピンク色 */
+  font-weight: bold; /* 太字 */
+  padding: 15px; /* パディングを追加 */
+  border-radius: 8px; /* 角を丸くする */
+  margin: 20px auto; /* 上下に余白を追加し、中央に配置 */
+  font-size: 20px; /* フォントサイズを少し大きくする */
+  text-align: center; /* 中央揃え */
+  border: 2px solid #d5006d; /* ピンクの境界線を追加 */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* 影を少し強めに */
+  transition: transform 0.3s; /* アニメーションを追加 */
+  max-width: 400px; /* 最大幅を設定 */
+}
+
+/* ホバー時の効果 */
+.welcome-message:hover {
+  transform: scale(1.05); /* マウスオーバー時に少し大きくする */
+}
+
+/* お問い合わせボタンのスタイル */
+.contact-button {
+  position: fixed; /* 固定配置 */
+  bottom: 20px; /* 下から20px */
+  right: 20px; /* 右から20px */
+}
+
+.btn-contact {
+  background-color: #4CAF50; /* 緑色 */
+  color: white; /* テキストの色 */
+  padding: 10px 20px; /* パディング */
+  border-radius: 5px; /* 角を丸める */
+  text-decoration: none; /* 下線を削除 */
+}
+
+/* お問い合わせページのボタンスタイル */
+.btn-submit {
+  background-color: #007BFF; /* 青色 */
+  color: white; /* テキストの色 */
+  padding: 10px 20px; /* パディング */
+  border-radius: 5px; /* 角を丸める */
+}
+
+.btn-back {
+  background-color: #FFC107; /* 黄色 */
+  color: white; /* テキストの色 */
+  padding: 10px 20px; /* パディング */
+  border-radius: 5px; /* 角を丸める */
+  text-decoration: none; /* 下線を削除 */
+}
+
+/* ボタンホバー時のスタイル */
+.btn-contact:hover,
+.btn-submit:hover,
+.btn-back:hover {
+  opacity: 0.8; /* 少し透明にする */
+}

@@ -1,16 +1,30 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>OriginalAppV1</title>
-    <meta name="viewport" content="width=device-width,initial-scale=1">
-    <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
+<head>
+  <title>OriginalAppV1</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <%= csrf_meta_tags %>
+  <%= csp_meta_tag %>
+  <%= stylesheet_link_tag 'application', media: 'all', 'data-turbo-track': 'reload' %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+</head>
 
-    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
-    <%= javascript_importmap_tags %>
-  </head>
+<body>
+<header>
+  <div class="header-buttons" style="position: absolute; top: 10px; right: 10px;">
+    <% unless current_page?(root_path) %> <!-- トップページでないときだけ表示 -->
+      <%= link_to 'トップページに戻る', root_path, class: 'btn btn-warning' %>
+    <% end %>
 
-  <body>
-    <%= yield %>
-  </body>
+    <% if user_signed_in? %>
+      <% unless current_page?(edit_user_registration_path) %>
+        <%= link_to 'アカウント編集', edit_user_registration_path, class: 'btn btn-warning' %>
+      <% end %>
+    <% end %>
+  </div>
+</header>
+
+  <%= yield %>
+  <%= javascript_include_tag 'stocks' %>
+</body>
 </html>

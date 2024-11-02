@@ -1,0 +1,50 @@
+<%= stylesheet_link_tag 'devise', media: 'all', 'data-turbo-track': 'reload' %>
+
+<h2>新規登録</h2>
+
+<% if resource.errors.any? %>
+  <div class="error-messages">
+    <h3>エラーがあります:</h3>
+    <ul>
+      <% resource.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>
+
+<%= form_with model: resource, as: resource_name, url: registration_path(resource_name), local: true do |form| %>
+  <div class="field">
+    <%= form.label :nickname, "ニックネーム" %>
+    <%= form.text_field :nickname, class: 'input-field' %>
+  </div>
+
+  <div class="field">
+    <%= form.label :email, "メールアドレス" %>
+    <%= form.email_field :email, autofocus: true, autocomplete: "email", class: 'input-field' %>
+  </div>
+
+  <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+    <div>現在、確認待ちのメール: <%= resource.unconfirmed_email %></div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :password, "パスワード" %>
+    <%= form.password_field :password, autocomplete: "new-password", class: 'input-field' %>
+    <% if @minimum_password_length %>
+      <br />
+      <em><%= @minimum_password_length %>文字以上が必要です</em>
+    <% end %>
+  </div>
+
+  <div class="field">
+    <%= form.label :password_confirmation, "パスワード確認" %>
+    <%= form.password_field :password_confirmation, autocomplete: "new-password", class: 'input-field' %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit "登録", class: 'submit-button' %>
+  </div>
+<% end %>
+
+<%= link_to 'トップページに戻る', root_path, class: 'button' %>

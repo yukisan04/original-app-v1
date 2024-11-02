@@ -1,0 +1,71 @@
+/* 全体のスタイル */
+body {
+  background: linear-gradient(135deg, #e0f7fa, #ffe0b2); /* 明るいグラデーション背景 */
+  font-family: Arial, sans-serif;
+  padding: 20px; /* 上下左右の余白 */
+}
+
+/* フォームのスタイル */
+form {
+  background: rgba(255, 255, 255, 0.9); /* 半透明の白い背景 */
+  border-radius: 8px; /* 角を丸く */
+  padding: 30px; /* 内側の余白 */
+  max-width: 400px; /* フォームの最大幅 */
+  margin: 0 auto; /* 中央揃え */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* 柔らかい影をつけて立体感を出す */
+}
+
+/* フォームラベル */
+label {
+  display: block; /* ラベルをブロック要素に */
+  margin-bottom: 8px; /* ラベルの下に余白 */
+  color: #333; /* ラベルの色 */
+}
+
+/* 入力フィールド */
+input[type="text"],
+input[type="password"] {
+  width: 100%; /* 入力フィールドの幅を100%に */
+  padding: 10px; /* 内側の余白 */
+  margin-bottom: 20px; /* フィールドの下に余白 */
+  border: 1px solid #ccc; /* 枠線の色 */
+  border-radius: 4px; /* 角を少し丸く */
+  box-sizing: border-box; /* パディングとボーダーを含めたサイズ */
+  transition: border-color 0.3s; /* フォーカス時のトランジション */
+}
+
+input[type="text"]:focus,
+input[type="password"]:focus {
+  border-color: #81d4fa; /* フォーカス時のボーダーカラー */
+}
+
+/* ボタンのスタイル */
+input[type="submit"] {
+  background-color: #ffab40; /* ボタンの背景色 */
+  color: white; /* ボタンの文字色 */
+  padding: 10px; /* 内側の余白 */
+  border: none; /* ボタンの枠線を消す */
+  border-radius: 4px; /* 角を丸くする */
+  cursor: pointer; /* カーソルをポインターに */
+  transition: background-color 0.3s; /* ホバー時の変化を滑らかに */
+  font-weight: bold; /* ボタンの文字を太字に */
+}
+
+input[type="submit"]:hover {
+  background-color: #ff8f00; /* ホバー時の色 */
+}
+
+.btn {
+  padding: 10px 15px; /* ボタンのパディング */
+  border-radius: 5px; /* 角を丸くする */
+  text-decoration: none; /* 下線を無しに */
+  color: white; /* テキストの色を白にする */
+  transition: background-color 0.3s; /* ホバー時の背景色の変化を滑らかに */
+}
+.btn-warning {
+  background-color: orange; /* オレンジの背景色 */
+}
+
+.btn-warning:hover {
+  background-color: darkorange; /* ホバー時の背景色 */
+}

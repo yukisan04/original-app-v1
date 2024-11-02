@@ -1,0 +1,127 @@
+/* ページ全体のスタイル */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 20px;
+  background-color: #e9f5fb; /* 背景色 */
+}
+
+/* ヘッダーのスタイル */
+h1 {
+  color: #2c3e50; /* ヘッダーの文字色 */
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+/* エラーメッセージのスタイル */
+#error_explanation {
+  background-color: #f8d7da; /* エラーメッセージの背景色 */
+  color: #721c24; /* エラーメッセージの文字色 */
+  border: 1px solid #f5c6cb; /* エラーメッセージの枠線 */
+  padding: 10px;
+  margin-bottom: 20px;
+}
+
+/* フォームフィールドのスタイル */
+.field {
+  margin-bottom: 15px;
+  background-color: #ffffff; /* フィールドの背景色 */
+  padding: 10px;
+  border-radius: 5px; /* フィールドの角を丸める */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* フィールドの影 */
+}
+
+/* ラベルのスタイル */
+.field label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+/* 入力フィールドのスタイル */
+.input-field {
+  width: 100%; /* 幅を100%に設定 */
+  max-width: 400px; /* 最大幅を400pxに設定（必要に応じて調整） */
+  padding: 10px; /* 内側の余白 */
+  border-radius: 5px; /* 角を丸める */
+  border: 1px solid #ccc; /* 枠線 */
+  background-color: #fce5cd; /* 肌色っぽい背景色 */
+  color: #333; /* テキストの色 */
+}
+
+/* プレースホルダーのスタイル */
+.input-field::placeholder {
+  color: #b0b0b0; /* 薄いグレーで例を表示 */
+  opacity: 1; /* プレースホルダーの透明度を設定 */
+}
+
+/* テキストエリアのスタイル */
+.text-area {
+  width: 100%; /* 幅を100%に設定 */
+  padding: 10px; /* 内側の余白 */
+  border-radius: 5px; /* 角を丸める */
+  border: 1px solid #ccc; /* 枠線 */
+  background-color: #e0f7fa; /* テキストエリアの背景色 */
+}
+
+/* 文字数カウンターのスタイル */
+#charCount {
+  text-align: center; /* 中央寄せ */
+  font-size: 12px; /* フォントサイズ */
+  color: #888; /* 色 */
+  margin-top: 5px; /* 上部の余白 */
+  font-weight: bold; /* 太字にする */
+}
+
+/* ボタンのスタイル */
+.btn {
+  background-color: #007bff; /* プライマリカラー */
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px; /* フォントサイズ */
+}
+
+.btn:hover {
+  background-color: #0056b3; /* ホバー時の色 */
+}
+
+/* フッターのスタイル */
+footer {
+  text-align: center;
+  margin-top: 20px;
+  color: #666;
+}
+.required {
+  color: #e74c3c; /* 赤色で必須を表示 */
+  margin-left: 5px; /* ラベルとの間隔を空ける */
+}
+
+.inline-label {
+  display: inline-block; /* インラインブロックにして横並びにする */
+  margin-right: 5px; /* ラベルと必須マークの間隔を調整 */
+}
+
+.notice {
+  background-color: #fff3cd; /* 注意事項の背景色 */
+  border: 1px solid #ffeeba; /* 枠線の色 */
+  padding: 15px; /* 内側の余白 */
+  border-radius: 5px; /* 角を丸める */
+  margin-bottom: 20px; /* 下部のマージン */
+}
+
+.notice h2 {
+  color: #856404; /* タイトルの色 */
+}
+
+.notice ul {
+  list-style-type: none; /* 黒い丸を消す */
+  padding-left: 0; /* 左側の余白を消す */
+  margin: 0; /* マージンを0にする */
+}
+
+.notice ul li {
+  margin-bottom: 5px; /* 各リストアイテムの間隔 */
+}

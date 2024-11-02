@@ -1,0 +1,135 @@
+/* 背景スタイル */
+body {
+  background-color: #f9f9f9; /* 全体背景色 */
+}
+
+/* ヘッダー全体のスタイル */
+header {
+  background-color: #f0f8ff; /* 薄い青の背景色 */
+  padding: 15px 20px; /* 上下左右の余白 */
+  border-bottom: 2px solid #ddd; /* 下に薄いボーダー */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* ヘッダー内のタイトルスタイル */
+header h1 {
+  color: #333; /* タイトルの文字色 */
+  font-size: 24px;
+  font-weight: bold;
+  margin: 0;
+}
+
+/* タイトルスタイル */
+h2, .form-title {
+  background-color: #ccf2d5; /* 薄い緑色 */
+  text-align: center;
+  font-size: 28px; /* タイトルのフォントサイズ */
+  font-weight: bold; /* 太字 */
+  padding: 15px 0; /* 上下の余白 */
+  margin: 0 auto 20px; /* 上下のマージンを設定 */
+  max-width: 400px; /* 最大幅 */
+}
+
+/* 入力フィールドのスタイル */
+.input-field {
+  width: 70%; /* フィールドの幅を70% */
+  padding: 10px; /* パディング */
+  border: 1px solid #ccc; /* 枠線 */
+  border-radius: 4px; /* 角を丸く */
+  font-size: 16px; /* フォントサイズ */
+  margin: 0 auto 20px; /* 上下のマージンを設定 */
+  display: block; /* ブロック要素として表示 */
+}
+
+.input-field:focus {
+  border-color: #4CAF50; /* フォーカス時のボーダー色 */
+  outline: none; /* フォーカス時のアウトラインを削除 */
+}
+
+/* ボタンのスタイル */
+.submit-button, .button, .back-button, .cancel-button, .btn-warning {
+  display: block;
+  width: 100%;
+  max-width: 400px; /* 最大幅 */
+  padding: 12px;
+  margin: 15px auto; /* 自動マージン */
+  font-size: 1.2em; /* フォントサイズ */
+  color: #fff; /* テキストの色 */
+  border: none; /* ボーダーなし */
+  border-radius: 5px; /* 角を丸くする */
+  text-align: center; /* 中央揃え */
+  cursor: pointer; /* カーソルをポインタに */
+  transition: background-color 0.3s; /* ホバー時の背景色の変化を滑らかに */
+}
+
+.submit-button {
+  background-color: #4CAF50; /* 緑色 */
+}
+
+.submit-button:hover {
+  background-color: #45a049; /* ホバー時の色 */
+}
+
+.back-button {
+  color: #ffa500; /* オレンジ色 */
+  text-decoration: none; /* 下線を無しに */
+  font-weight: bold; /* 太字 */
+  border: 1px solid #ffa500; /* 枠線 */
+}
+
+.back-button:hover {
+  background-color: #ffa500; /* ホバー時の色 */
+  color: #ffffff; /* テキストの色 */
+}
+
+/* 削除アカウントタイトルのスタイル */
+.delete-account-title {
+  margin-top: 30px; /* 上にスペース */
+  font-size: 24px; /* フォントサイズ */
+  color: #f44336; /* 赤色 */
+  text-align: center; /* 中央揃え */
+}
+
+/* キャンセルボタンのスタイル */
+.cancel-button {
+  background-color: #f44336; /* 赤色 */
+}
+
+.cancel-button:hover {
+  background-color: #e53935; /* ホバー時の色 */
+}
+
+/* フォーム全体のスタイル */
+form {
+  margin: 20px auto; /* 上にスペース */
+  background-color: #ffffff; /* 白背景 */
+  border-radius: 8px; /* 角を丸く */
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* 影 */
+  padding: 20px 30px; /* パディング */
+  width: 300px; /* 幅を固定 */
+  text-align: center; /* テキストを中央揃え */
+}
+
+.password-reset-link {
+  display: block; /* 新しい行に表示 */
+  margin-top: 10px; /* 上部に余白を追加 */
+  color: #007bff; /* リンクの色 */
+  text-decoration: none; /* 下線を消す */
+}
+
+.password-reset-link:hover {
+  text-decoration: underline; /* ホバー時に下線を表示 */
+}
+
+.password-reset-button {
+  color: blue; /* ボタンの文字色 */
+  text-decoration: underline; /* 下線を引く */
+}
+
+.error-messages ul,
+.notice-messages ul {
+  list-style-type: none;
+  padding-left: 0;
+}

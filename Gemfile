@@ -70,3 +70,14 @@ group :test do
   gem "selenium-webdriver"
   gem "webdrivers"
 end
+
+gem 'devise'
+gem 'pry-rails'
+gem 'active_hash'
+gem 'rspec-rails', '~> 4.0.0'
+gem 'faker'
+gem 'factory_bot_rails'
+gem 'mini_magick'
+gem 'image_processing', '~> 1.2'
+gem 'webpacker', '~> 5.0'
+gem 'bcrypt', '~> 3.1.7'

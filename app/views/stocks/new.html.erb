@@ -1,0 +1,18 @@
+<%= stylesheet_link_tag 'stocks', media: 'all', 'data-turbo-track': 'reload' %>
+<h1>在庫を追加</h1>
+<%= form_with(model: [@room, @stock], local: true) do |form| %>
+  <div>
+    <%= form.label :product_name, "商品名" %>
+    <%= form.text_field :product_name, value: @stock.product_name, placeholder: "例: りんご", required: true %>
+  </div>
+  <div>
+    <%= form.label :quantity, "数量" %>
+    <%= form.number_field :quantity, value: @stock.quantity, required: true %>
+  </div>
+  <div>
+    <%= form.label :image, "画像" %>
+    <%= form.file_field :image %>
+  </div>
+  <%= form.submit '追加', class: 'btn btn-primary' %>
+<% end %>
+<%= link_to 'ルームに戻る', room_path(@room), class: 'btn btn-secondary' %>
