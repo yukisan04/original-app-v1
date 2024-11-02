@@ -79,7 +79,6 @@ gem 'faker'
 gem 'factory_bot_rails'
 gem 'mini_magick'
 gem 'image_processing', '~> 1.2'
-gem 'webpacker'
 gem 'bcrypt', '~> 3.1.7'
 group :production do
   gem 'pg'
