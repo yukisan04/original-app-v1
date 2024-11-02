@@ -81,3 +81,7 @@ gem 'mini_magick'
 gem 'image_processing', '~> 1.2'
 gem 'webpacker', '~> 5.0'
 gem 'bcrypt', '~> 3.1.7'
+
+group :production do
+  gem 'pg'
+end
