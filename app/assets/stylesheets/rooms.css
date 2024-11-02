@@ -2,11 +2,11 @@
 body {
   background: linear-gradient(135deg, #6b6f82, #a2a6c6);
   font-family: Arial, sans-serif;
-  margin: 0; /* マージンをリセット */
-  padding: 0; /* パディングをリセット */
-  display: flex; /* フレックスボックスを使用 */
-  flex-direction: column; /* 縦方向に並べる */
-  align-items: center; /* 中央揃え */
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 /* ヘッダーのスタイル */
@@ -14,91 +14,53 @@ header {
   background-color: #d0f0c0;
   padding: 20px;
   border-bottom: 2px solid #ccc;
-  text-align: center; /* ヘッダーを中央揃え */
-  position: relative; /* ボタンの位置を調整するために相対位置を設定 */
-  width: 100%; /* ヘッダーを全幅にする */
+  position: relative;
+  width: 100%;
+  text-align: center;
+}
+
+.header-title {
+  text-align: center;
 }
 
 header h1 {
-  font-size: 28px; /* 大きめのフォントサイズ */
-  margin: 10px 0; /* 上下のマージン */
-  color: #4CAF50; /* 緑色のタイトル */
-}
-
-header .header-buttons {
-  position: absolute;
-  top: 20px; /* ヘッダー内のスペースを調整 */
-  right: 20px;
-  display: flex; /* ボタンを横に並べるためにflexboxを使用 */
-  gap: 10px; /* ボタン間のスペースを調整 */
+  font-size: 28px;
+  margin: 10px 0;
+  color: #4CAF50;
 }
 
 /* ボタンのスタイル */
 .btn {
-  padding: 10px 15px; /* ボタンのパディング */
-  border-radius: 5px; /* 角を丸くする */
-  text-decoration: none; /* 下線を無しに */
-  color: white; /* テキストの色を白にする */
-  transition: background-color 0.3s, transform 0.3s; /* ホバー時の背景色の変化を滑らかに */
+  padding: 10px 15px;
+  border-radius: 5px;
+  text-decoration: none;
+  color: white;
+  transition: background-color 0.3s, transform 0.3s;
 }
 
-/* フォームスタイル */
-.form-group {
-  margin-bottom: 15px; /* 各フォームグループの下に余白 */
-}
-
-/* ルーム一覧のリストのスタイル */
-ul {
-  list-style-type: none; /* リストマーカーを非表示 */
-  padding: 0; /* パディングを削除 */
-  display: flex; /* フレックスボックスを使用 */
-  flex-direction: column; /* 縦に並べる */
-  align-items: center; /* 中央揃え */
-  margin: 0 auto; /* 左右のマージンを自動で調整 */
-}
-
-/* 各ルームのスタイル */
-.room {
-  width: 100%; /* 幅を100%に */
-  max-width: 400px; /* 最大幅を設定 */
-  margin: 10px; /* 外側の余白 */
-  background-color: rgba(255, 255, 255, 0.8); /* 背景を薄く */
-  border-radius: 20px; /* 角を丸く */
-  padding: 10px; /* 内側の余白 */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* 影を付ける */
-  transition: background-color 0.3s; /* ホバー時のスムーズな変化 */
-  text-align: center; /* テキストを中央揃え */
-}
-
-/* 在庫リスト全体にスペースを追加 */
-.stock-list {
-  margin-top: 20px; /* 在庫リストの上にマージンを追加 */
-  width: 100%; /* 幅を100%に */
-  max-width: 600px; /* 最大幅を設定 */
+/* 必要に応じて .stock-controls の中央揃えをCSSに追加 */
+.stock-controls {
+  text-align: center;
 }
 
 /* フォームのスタイル */
 form {
-  background: rgba(255, 255, 255, 0.9); /* 半透明の白い背景 */
-  border-radius: 8px; /* 角を丸く */
-  padding: 20px; /* 内側の余白 */
-  max-width: 400px; /* フォームの最大幅 */
-  margin: 20px auto; /* 中央揃え */
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* 影をつけて立体感を出す */
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 8px;
+  padding: 20px;
+  max-width: 400px;
+  margin: 20px auto;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 
-label {
-  display: block; /* ラベルをブロック要素に */
-  margin-bottom: 8px; /* ラベルの下に余白 */
-  color: #333; /* ラベルの色 */
-}
-
-/* メッセージエリアのスタイル */
-.message-area {
-  background: rgba(255, 255, 255, 0.9); /* 半透明の背景 */
-  border-radius: 8px; /* 角を丸くする */
-  padding: 20px; /* パディング */
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* 軽い影 */
-  width: 100%; /* 幅を100%に */
-  max-width: 600px; /* 最大幅を設定 */
+/* ルームのスタイル */
+.room {
+  width: 100%;
+  max-width: 400px;
+  margin: 10px;
+  background-color: rgba(255, 255, 255, 0.8);
+  border-radius: 20px;
+  padding: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
 }

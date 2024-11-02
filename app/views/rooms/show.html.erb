@@ -1,10 +1,13 @@
 <%= stylesheet_link_tag 'rooms3', media: 'all', 'data-turbo-track': 'reload' %>
-<h1><%= @room.name %>のルーム</h1>
+
+<div class="stock-controls" style="text-align: center;">
+  <h1><%= @room.name %>のルーム</h1>
+</div>
 
 <div class="room-details">
   <h2>在庫リスト</h2>
 
-  <div class="stock-controls">
+  <div class="stock-controls" style="text-align: center;">
     <!-- 検索ボックス -->
     <input type="text" id="search" placeholder="在庫を検索..." class="search-box">
     <%= link_to '在庫を追加', new_room_stock_path(@room), class: "btn btn-warning" %>
@@ -12,7 +15,7 @@
     <select id="sort-options" class="btn btn-sort">
       <option value="low-stock" class="low-stock">在庫が少ない順に表示</option>
       <option value="high-stock" class="high-stock">在庫が多い順に表示</option>
-      <option value="updated" class="updated">更新順に表示</option> <!-- 更新順を追加 -->
+      <option value="updated" class="updated">更新順に表示</option>
     </select>
   </div>
 
@@ -22,7 +25,7 @@
     <% else %>
       <% @room.stocks.each do |stock| %>
         <% if stock.product_name != "例: りんご" %>
-          <li class="stock-item" data-updated="<%= stock.updated_at %>"> <!-- updated_atをデータ属性として追加 -->
+          <li class="stock-item" data-updated="<%= stock.updated_at %>">
             <div class="stock-details">
               <div class="stock-image">
                 <% if stock.image.attached? %>

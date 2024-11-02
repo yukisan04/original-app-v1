@@ -1,4 +1,5 @@
 <%= stylesheet_link_tag 'rooms2', media: 'all', 'data-turbo-track': 'reload' %>
+<div class="stock-controls" style="text-align: center;">
 <h1>新しいルームを作成</h1>
 
 <% if @room.errors.any? %>
@@ -25,3 +26,4 @@
     <%= form.submit '作成' %>
   </div>
 <% end %>
+</div>
