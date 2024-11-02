@@ -1,14 +1,17 @@
 /* 全体のスタイル */
 body {
-  background: linear-gradient(135deg, #6b6f82, #a2a6c6); /* グラデーション背景 */
+  background: linear-gradient(135deg, #6b6f82, #a2a6c6);
   font-family: Arial, sans-serif;
+  margin: 0; /* マージンをリセット */
+  padding: 0; /* パディングをリセット */
 }
 
 /* ヘッダーのスタイル */
 header {
-  background-color: #d0f0c0; /* 薄緑の背景色 */
-  padding: 20px; /* 上下左右の余白 */
-  border-bottom: 2px solid #ccc; /* 下に薄いボーダー */
+  background-color: #d0f0c0;
+  padding: 20px;
+  border-bottom: 2px solid #ccc;
+  text-align: center; /* ヘッダーを中央揃え */
 }
 
 header h1 {
