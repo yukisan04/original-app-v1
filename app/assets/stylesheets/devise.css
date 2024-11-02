@@ -113,19 +113,29 @@ form {
 }
 
 .password-reset-link {
-  display: block; /* 新しい行に表示 */
+  display: inline-block; /* 行内ブロック要素として表示 */
   margin-top: 10px; /* 上部に余白を追加 */
   color: #007bff; /* リンクの色 */
   text-decoration: none; /* 下線を消す */
+  font-weight: bold; /* 太字 */
+  text-align: center; /* 中央揃え */
 }
 
 .password-reset-link:hover {
   text-decoration: underline; /* ホバー時に下線を表示 */
+  color: #0056b3; /* ホバー時の色 */
 }
 
-.password-reset-button {
-  color: blue; /* ボタンの文字色 */
-  text-decoration: underline; /* 下線を引く */
+@media (max-width: 600px) {
+  .password-reset-link {
+    font-size: 14px; /* フォントサイズを小さくする */
+  }
+}
+
+.password-reset-link-container {
+  display: flex; /* フレックスボックスを使用 */
+  justify-content: center; /* 中央揃え */
+  width: 100%; /* 幅を100%に設定 */
 }
 
 .error-messages ul,

@@ -29,11 +29,13 @@
   </div>
 
   <div>
-    <%= form.submit 'ログイン', class: 'button' %>
+    <%= form.submit 'ログイン', class: 'submit-button' %>
   </div>
 <% end %>
 
-<%= link_to 'パスワードを忘れた方はこちら', password_resets_path, class: 'password-reset-link' %>
+<div class="password-reset-link-container">
+  <%= link_to 'パスワードを忘れた方はこちら', password_resets_path, class: 'button password-reset-link' %>
+</div>
 <%= link_to 'トップページに戻る', root_path, class: 'back-button' %>
 
 <script>
