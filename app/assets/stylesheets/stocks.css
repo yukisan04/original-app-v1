@@ -112,3 +112,11 @@ input[type="number"]:focus {
   background-color: #ff8c00; /* ホバー時の色を少し暗くする */
   transform: scale(1.05); /* ホバー時に少し大きくなる */
 }
+
+/* 必要に応じて .stock-controls の中央揃えをCSSに追加 */
+.stock-controls {
+  text-align: center;
+  width: 100%;
+  max-width: 600px; /* 中央揃えのための最大幅設定 */
+  margin: 20px auto;
+}

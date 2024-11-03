@@ -1,12 +1,14 @@
 <%= stylesheet_link_tag 'stocks', media: 'all', 'data-turbo-track': 'reload' %>
-<ul class="stock-list">
-  <% @room.stocks.each do |stock| %>
-    <li class="stock-item">
-      <strong><%= stock.product_name %></strong> - 数量: <%= stock.quantity %> - 状態: <%= stock.stock_status %>
-      <div class="stock-actions">
-        <%= link_to '編集', edit_room_stock_path(@room, stock), class: "btn btn-primary" %>
-        <%= button_to '削除', [@room, @stock], method: :delete, data: { confirm: '本当に削除しますか？' }, class: "btn btn-danger" %>
-      </div>
-    </li>
-  <% end %>
-</ul>
+<div class="stock-controls" style="text-align: center;">
+  <ul class="stock-list">
+    <% @room.stocks.each do |stock| %>
+      <li class="stock-item">
+        <strong><%= stock.product_name %></strong> - 数量: <%= stock.quantity %> - 状態: <%= stock.stock_status %>
+        <div class="stock-actions">
+          <%= link_to '編集', edit_room_stock_path(@room, stock), class: "btn btn-primary" %>
+          <%= button_to '削除', [@room, @stock], method: :delete, data: { confirm: '本当に削除しますか？' }, class: "btn btn-danger" %>
+        </div>
+      </li>
+    <% end %>
+  </ul>
+</div>

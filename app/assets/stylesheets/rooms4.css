@@ -91,3 +91,11 @@ body {
   background-position: center; /* 画像を中央に配置 */
   background-attachment: fixed; /* スクロールしても背景を固定 */
 }
+
+/* 必要に応じて .stock-controls の中央揃えをCSSに追加 */
+.stock-controls {
+  text-align: center;
+  width: 100%;
+  max-width: 600px; /* 中央揃えのための最大幅設定 */
+  margin: 20px auto;
+}

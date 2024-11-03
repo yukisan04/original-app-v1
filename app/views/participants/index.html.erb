@@ -1,13 +1,14 @@
 <%= stylesheet_link_tag 'rooms4', media: 'all', 'data-turbo-track': 'reload' %>
-
-<div class="participants">
-  <h3>参加者一覧</h3>
-  <ul>
-    <% @participants.each do |user| %>
-      <li><%= user.nickname %></li>
-    <% end %>
-  </ul>
-  <div class="room-return-button">
-    <button class="btn btn-return" onclick="history.back()">個別ルームに戻る</button>
+<div class="stock-controls" style="text-align: center;">
+  <div class="participants">
+    <h3>参加者一覧</h3>
+    <ul>
+      <% @participants.each do |user| %>
+        <li><%= user.nickname %></li>
+      <% end %>
+    </ul>
+    <div class="room-return-button">
+      <button class="btn btn-return" onclick="history.back()">個別ルームに戻る</button>
+    </div>
   </div>
 </div>
