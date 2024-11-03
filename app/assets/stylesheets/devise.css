@@ -1,6 +1,7 @@
 /* 背景スタイル */
 body {
   background-color: #f9f9f9;
+  font-family: Arial, sans-serif;
 }
 
 /* ヘッダー */
@@ -15,7 +16,7 @@ header {
 
 header h1 {
   color: #333;
-  font-size: 24px;
+  font-size: 26px;
   font-weight: bold;
   margin: 0;
 }
@@ -24,20 +25,21 @@ header h1 {
 h2, .form-title {
   background-color: #ccf2d5;
   text-align: center;
-  font-size: 28px;
+  font-size: 30px;
   font-weight: bold;
-  padding: 15px 0;
+  padding: 15px;
   margin: 0 auto 20px;
   max-width: 400px;
+  border-radius: 8px;
 }
 
 /* 入力フィールド */
 .input-field {
-  width: 70%;
-  padding: 10px;
+  width: 80%;
+  padding: 12px;
   border: 1px solid #ccc;
-  border-radius: 4px;
-  font-size: 16px;
+  border-radius: 6px;
+  font-size: 18px;
   margin: 0 auto 20px;
   display: block;
 }
@@ -50,14 +52,14 @@ h2, .form-title {
 /* ボタン */
 .button, .submit-button, .back-button, .cancel-button {
   display: block;
-  width: 100%;
+  width: 90%;
   max-width: 400px;
-  padding: 12px;
+  padding: 15px;
   margin: 15px auto;
   font-size: 1.2em;
   color: #fff;
   border: none;
-  border-radius: 5px;
+  border-radius: 6px;
   text-align: center;
   cursor: pointer;
   transition: background-color 0.3s;
@@ -74,7 +76,7 @@ h2, .form-title {
 .back-button {
   color: #ffa500;
   background: none;
-  border: 1px solid #ffa500;
+  border: 2px solid #ffa500;
 }
 
 .back-button:hover {
@@ -103,9 +105,9 @@ form {
   margin: 20px auto;
   background-color: #fff;
   border-radius: 8px;
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-  padding: 20px 30px;
-  width: 300px;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+  padding: 25px 35px;
+  width: 320px;
   text-align: center;
 }
 
@@ -131,10 +133,24 @@ form {
 }
 
 /* エラーメッセージ */
-.error-messages ul,
+.error-messages, .notice-messages {
+  background-color: #f8d7da;
+  color: #721c24;
+  border: 1px solid #f5c6cb;
+  border-radius: 6px;
+  padding: 15px;
+  margin-bottom: 20px;
+}
+
+.error-messages h3,
 .notice-messages ul {
+  font-size: 18px;
+}
+
+.error-messages ul, .notice-messages ul {
   list-style-type: none;
   padding-left: 0;
+  margin: 0;
 }
 
 /* モバイル対応 */
@@ -146,6 +162,10 @@ form {
     width: 90%;
   }
   .password-reset-link {
-    font-size: 14px;
+    font-size: 16px;
+  }
+  form {
+    width: 90%;
+    padding: 20px;
   }
 }
