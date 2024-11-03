@@ -67,6 +67,7 @@ input[type="number"]:focus {
 
 /* 戻るボタンのスタイル */
 .btn-secondary {
+  margin-top: 20px; /* ボタンの上にマージンを追加 */
   margin-bottom: 15px; /* 各フィールドの間隔 */
   background-color: #6c757d; /* グレーの背景 */
 }
