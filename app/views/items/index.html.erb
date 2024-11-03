@@ -15,17 +15,17 @@
         <% if user_signed_in? %>
             <h2>ようこそ、<%= current_user.nickname || current_user.email %>さん！</h2>
             <p class="welcome-message">ルームやアイテムリストを確認できます。</p>
-            <%= link_to 'ルームへ', rooms_path, class: 'button' %>
-            <%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: 'button' %>
-
-            <!-- お問い合わせボタン -->
-            <div class="contact-button">
-                <%= link_to 'お問い合わせはこちら', new_contact_path, class: 'btn btn-contact' %>
+            <div class="button-group">
+                <%= link_to 'ルームへ', rooms_path, class: 'button' %>
+                <%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: 'button' %>
             </div>
+            <%= link_to 'お問い合わせはこちら', new_contact_path, class: 'button contact' %>
         <% else %>
             <h2>ログインまたは新規登録</h2>
-            <%= link_to 'ログイン', new_user_session_path, class: 'button' %>
-            <%= link_to '新規登録', new_user_registration_path, class: 'button' %>
+            <div class="button-group">
+                <%= link_to 'ログイン', new_user_session_path, class: 'button' %>
+                <%= link_to '新規登録', new_user_registration_path, class: 'button' %>
+            </div>
         <% end %>
     </main>
 

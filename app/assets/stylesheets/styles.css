@@ -1,129 +1,78 @@
-/* 背景スタイル */
 body {
-  background-color: #f9f9f9;
   font-family: 'Arial', sans-serif;
+  background-color: #f9f9f9;
   color: #333;
   text-align: center;
 }
 
-/* ヘッダー */
 header {
-  background-color: #ffcc00; /* 明るいオレンジ色 */
+  background-color: #ffcc00;
   padding: 20px;
   border-radius: 10px;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
-header h1 {
+h1 {
   font-size: 2.5em;
   margin: 0;
 }
 
-/* メインコンテンツ */
+h2 {
+  color: #ff6699;
+}
+
 main {
   margin: 20px;
 }
 
-h2 {
-  color: #ff6699;
-  font-size: 2em;
+.button-group {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 20px;
 }
 
-/* ボタンスタイル */
-.btn-primary, .btn-warning, .button, .btn-contact, .btn-submit, .btn-back {
+.button {
   display: inline-block;
-  padding: 15px 25px; /* 大きめのパディング */
-  font-size: 20px; /* ボタンのフォントサイズを大きく */
-  border-radius: 6px;
+  padding: 15px 25px;
+  font-size: 18px;
+  border: none;
+  border-radius: 5px;
+  background-color: orange;
   color: white;
-  text-align: center;
   text-decoration: none;
   transition: background-color 0.3s, transform 0.3s;
-  margin: 10px 0; /* 上下に余白を追加 */
 }
 
-/* ボタンの色指定 */
-.btn-primary {
-  background-color: blue;
-}
-
-.btn-warning {
-  background-color: orange;
-}
-
-.btn-warning:hover {
+.button:hover {
   background-color: darkorange;
+  transform: scale(1.05);
 }
 
-.btn-contact {
-  background-color: #4CAF50; /* 緑色 */
-}
-
-.btn-submit {
-  background-color: #007BFF; /* 青色 */
-}
-
-.btn-back {
-  background-color: #FFC107; /* 黄色 */
-}
-
-/* ホバーとアクティブ時の効果 */
-.btn-primary:hover,
-.btn-warning:hover,
-.btn-contact:hover,
-.btn-submit:hover,
-.btn-back:hover {
-  opacity: 0.8;
-  transform: translateY(-2px); /* ホバー時の少しの移動 */
-}
-
-.btn-primary:active,
-.btn-warning:active,
-.btn-contact:active,
-.btn-submit:active,
-.btn-back:active {
-  transform: translateY(0);
-}
-
-/* ウェルカムメッセージのスタイル */
 .welcome-message {
   background-color: #e0f7e5;
   color: #d5006d;
   font-weight: bold;
-  padding: 20px;
+  padding: 15px;
   border-radius: 8px;
   margin: 20px auto;
-  font-size: 24px;
+  font-size: 20px;
   text-align: center;
   border: 2px solid #d5006d;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-  transition: transform 0.3s;
-  max-width: 500px;
+  max-width: 400px;
 }
 
-.welcome-message:hover {
-  transform: scale(1.05);
-}
-
-/* フッター */
 footer {
   margin-top: 30px;
-  font-size: 1em;
+  font-size: 0.9em;
   color: #888;
 }
 
-/* ボタン配置 */
-.header-buttons {
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  display: flex;
-  gap: 15px; /* ボタン間のスペースを広げる */
-}
-
-/* お問い合わせボタンの配置 */
-.contact-button {
+.contact {
   position: fixed;
   bottom: 20px;
   right: 20px;
+  background-color: #4CAF50;
+  padding: 10px 20px;
 }
