@@ -73,3 +73,23 @@ form {
   padding: 10px;
   margin-bottom: 15px;
 }
+
+/* form-control のスタイル */
+.form-control {
+  background-color: #f9f9ff; /* 明るい背景色 */
+  border: 1px solid #c0c6e4; /* 薄い青色の境界線 */
+  border-radius: 5px;
+  padding: 8px;
+  font-size: 16px;
+  color: #333;
+  width: 100%;
+  box-sizing: border-box;
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+/* form-control のフォーカス時のスタイル */
+.form-control:focus {
+  border-color: #4a90e2; /* フォーカス時の境界線の色 */
+  box-shadow: 0 0 5px rgba(74, 144, 226, 0.3); /* 青い影 */
+  outline: none; /* デフォルトのアウトラインを削除 */
+}
