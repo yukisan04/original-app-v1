@@ -64,3 +64,12 @@ form {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   text-align: center;
 }
+
+/* form-group のスタイル */
+.form-group {
+  background-color: #f0f8ff; /* 優しいブルーの背景色 */
+  border: 1px solid #d0e0ff; /* 薄いブルーの境界線 */
+  border-radius: 8px;
+  padding: 10px;
+  margin-bottom: 15px;
+}
