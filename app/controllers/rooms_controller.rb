@@ -6,6 +6,7 @@ class RoomsController < ApplicationController
                  .where(memberships: { user_id: current_user&.id })
                  .or(Room.where.not(password_digest: nil))
                  .distinct
+                 .order(updated_at: :desc) # 更新日時の降順で並び替え
   end
 
   def show
