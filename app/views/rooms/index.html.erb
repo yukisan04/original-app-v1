@@ -3,7 +3,6 @@
 <header>
   <% if current_user %>
     <h2><%= current_user.nickname %>さん、お帰りなさい！</h2>
-    <%= link_to 'アカウント編集', edit_user_registration_path, class: 'btn btn-warning' %>
   <% end %>
   <div style="text-align: center;">
     <h1>ルーム一覧</h1>

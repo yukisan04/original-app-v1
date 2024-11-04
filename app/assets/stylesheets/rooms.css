@@ -79,8 +79,6 @@ form {
 
 /* form-group のスタイル */
 .form-group {
-  background-color: #f0f8ff;
-  border: 1px solid #d0e0ff;
   border-radius: 8px;
   padding: 10px;
   margin-bottom: 15px;
