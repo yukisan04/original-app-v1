@@ -65,7 +65,7 @@
 ・操作は簡単にできるようにする
 
 # データベース設計
-https://i.gyazo.com/5de7e18842eb15f437ca41d0c9094d29.png
+![データベース設計](https://github.com/user-attachments/assets/da00f408-0aa3-4c2b-93a2-ea138cf0ccc6)
 
 # テーブル一覧
 
