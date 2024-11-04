@@ -35,8 +35,8 @@ main {
 
 .button {
   display: inline-block;
-  padding: 20px 30px; /* 10px大きくした */
-  font-size: 28px; /* 10px大きくした */
+  padding: 10px 20px;
+  font-size: 16px;
   border: none;
   border-radius: 5px;
   background-color: orange;
