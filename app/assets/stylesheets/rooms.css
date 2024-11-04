@@ -119,7 +119,7 @@ form {
   box-sizing: border-box;
 }
 
-.input[type="submit"] {
+.btn-primary {
   background-color: #28a745;
   color: white;
   border: none;
@@ -127,4 +127,8 @@ form {
   padding: 10px;
   cursor: pointer;
   transition: background-color 0.3s;
+}
+
+.form-label {
+  font-weight: bold;
 }
