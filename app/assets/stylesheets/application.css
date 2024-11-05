@@ -50,6 +50,9 @@
   .hamburger-menu {
     display: none;
   }
+  .header-buttons {
+    display: block;
+  }
 }
 
 /* ハンバーガーメニューのスタイル */
