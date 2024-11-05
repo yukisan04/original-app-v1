@@ -44,10 +44,20 @@
 <%= yield %>
 <%= javascript_include_tag 'stocks' %>
 <script>
+  // ページ読み込み時にハンバーガーメニューを非表示にする
+  document.addEventListener("DOMContentLoaded", function() {
+    var menu = document.getElementById("menu-content");
+    menu.style.display = "none"; // 初期状態で非表示
+  });
+
   // ハンバーガーメニューの表示・非表示を切り替えるスクリプト
   function toggleMenu() {
     var menu = document.getElementById("menu-content");
-    menu.style.display = menu.style.display === "block" ? "none" : "block";
+    if (menu.style.display === "block" || menu.style.display === "") {
+      menu.style.display = "none";
+    } else {
+      menu.style.display = "block";
+    }
   }
 </script>
 </body>

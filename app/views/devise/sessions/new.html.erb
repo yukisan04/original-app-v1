@@ -1,9 +1,8 @@
+<%= stylesheet_link_tag 'devise', media: 'all', 'data-turbo-track': 'reload' %>
 <!DOCTYPE html>
 <html>
 <head>
   <title>ログイン</title>
-  <%= stylesheet_link_tag 'devise', media: 'all', 'data-turbo-track': 'reload' %>
-  <%= stylesheet_link_tag 'application', media: 'all', 'data-turbo-track': 'reload' %>
 </head>
 
 <body>
@@ -44,9 +43,16 @@
     <%= link_to 'パスワードを忘れた方はこちら', password_resets_path, class: 'button password-reset-link' %>
   </div>
   <%= link_to 'トップページに戻る', root_path, class: 'back-button' %>
-
   <footer>
     <p>&copy; 2024 在庫ポケット</p>
+    <style>
+      /* フッターのスタイル */
+      footer {
+        text-align: center;
+        margin-top: 20px;
+        color: #666;
+      }
+    </style>
   </footer>
 
   <script>
