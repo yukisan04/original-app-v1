@@ -7,32 +7,48 @@
   <%= csp_meta_tag %>
   <%= stylesheet_link_tag 'application', media: 'all', 'data-turbo-track': 'reload' %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-  <style>
-    /* スマホサイズ（768px以下）で非表示にする */
-    @media (max-width: 768px) {
-      .header-buttons {
-        display: none;
-      }
+  <script>
+    // ハンバーガーメニューの表示・非表示を切り替えるスクリプト
+    function toggleMenu() {
+      var menu = document.getElementById("menu-content");
+      menu.style.display = menu.style.display === "block" ? "none" : "block";
     }
-  </style>
+  </script>
 </head>
 
 <body>
 <header>
+  <!-- スマホ版用のハンバーガーメニュー -->
+  <div class="hamburger-menu">
+    <span class="hamburger-icon" onclick="toggleMenu()">&#9776;</span>
+    <div id="menu-content" class="menu-content">
+      <% unless current_page?(root_path) || current_page?(edit_user_registration_path) %>
+        <%= link_to 'トップページに戻る', root_path, class: 'btn btn-warning' %>
+      <% end %>
+
+      <% if user_signed_in? %>
+        <% unless current_page?(root_path) || current_page?(edit_user_registration_path) %>
+          <%= link_to 'アカウント編集', edit_user_registration_path, class: 'btn btn-warning' %>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
+
+  <!-- PC版のボタン配置 -->
   <div class="header-buttons" style="position: absolute; top: 10px; right: 10px;">
-    <% unless current_page?(root_path) || current_page?(edit_user_registration_path) %> <!-- トップページまたはアカウント編集ページでないときだけ表示 -->
+    <% unless current_page?(root_path) || current_page?(edit_user_registration_path) %>
       <%= link_to 'トップページに戻る', root_path, class: 'btn btn-warning' %>
     <% end %>
 
     <% if user_signed_in? %>
-      <% unless current_page?(root_path) || current_page?(edit_user_registration_path) %> <!-- トップページまたはアカウント編集ページでないときだけ表示 -->
+      <% unless current_page?(root_path) || current_page?(edit_user_registration_path) %>
         <%= link_to 'アカウント編集', edit_user_registration_path, class: 'btn btn-warning' %>
       <% end %>
     <% end %>
   </div>
 </header>
 
-  <%= yield %>
-  <%= javascript_include_tag 'stocks' %>
+<%= yield %>
+<%= javascript_include_tag 'stocks' %>
 </body>
 </html>

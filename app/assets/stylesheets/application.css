@@ -40,3 +40,51 @@ footer {
   margin-top: 20px;
   color: #666;
 }
+
+/* スマホサイズ（768px以下）でヘッダーボタンを非表示、ハンバーガーメニューを表示 */
+@media (max-width: 768px) {
+  .header-buttons {
+    display: none;
+  }
+  .hamburger-menu {
+    display: block;
+  }
+}
+
+/* PCサイズでハンバーガーメニューを非表示 */
+@media (min-width: 769px) {
+  .hamburger-menu {
+    display: none;
+  }
+}
+
+/* ハンバーガーメニューのスタイル */
+.hamburger-icon {
+  font-size: 30px;
+  cursor: pointer;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+
+.menu-content {
+  display: none;
+  position: absolute;
+  top: 50px;
+  right: 10px;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.menu-content a {
+  display: block;
+  padding: 5px 0;
+  color: #333;
+  text-decoration: none;
+}
+
+.menu-content a:hover {
+  background-color: #f0f0f0;
+}
