@@ -1,81 +1,86 @@
-<%= stylesheet_link_tag 'devise', media: 'all', 'data-turbo-track': 'reload' %>
+<!DOCTYPE html>
+<html>
+<head>
+  <title>ログイン</title>
+  <%= stylesheet_link_tag 'devise', media: 'all', 'data-turbo-track': 'reload' %>
+  <%= stylesheet_link_tag 'application', media: 'all', 'data-turbo-track': 'reload' %>
+</head>
 
-<h2 class="login-title">ログイン</h2>
+<body>
+  <h2 class="login-title">ログイン</h2>
 
-<% if flash[:alert] && flash[:alert] != "Signed out successfully." %>
-  <div class="error-messages">
-    <h3>エラーがあります:</h3>
-    <ul>
-      <li><%= flash[:alert] %></li>
-    </ul>
+  <% if flash[:alert] && flash[:alert] != "Signed out successfully." %>
+    <div class="error-messages">
+      <h3>エラーがあります:</h3>
+      <ul>
+        <li><%= flash[:alert] %></li>
+      </ul>
+    </div>
+  <% elsif flash[:notice] && flash[:notice] != "Signed out successfully." %>
+    <div class="notice-messages">
+      <ul>
+        <li><%= flash[:notice] %></li>
+      </ul>
+    </div>
+  <% end %>
+
+  <%= form_with scope: :user, url: user_session_path, local: true, id: 'loginForm' do |form| %>
+    <div>
+      <%= form.label :email, "メールアドレス" %><br>
+      <%= form.email_field :email, autofocus: true, class: 'input-field', required: true %>
+    </div>
+
+    <div>
+      <%= form.label :password, "パスワード" %><br>
+      <%= form.password_field :password, class: 'input-field', required: true %>
+    </div>
+
+    <div>
+      <%= form.submit 'ログイン', class: 'submit-button' %>
+    </div>
+  <% end %>
+
+  <div class="password-reset-link-container">
+    <%= link_to 'パスワードを忘れた方はこちら', password_resets_path, class: 'button password-reset-link' %>
   </div>
-<% elsif flash[:notice] && flash[:notice] != "Signed out successfully." %>
-  <div class="notice-messages">
-    <ul>
-      <li><%= flash[:notice] %></li>
-    </ul>
-  </div>
-<% end %>
+  <%= link_to 'トップページに戻る', root_path, class: 'back-button' %>
 
-<%= form_with scope: :user, url: user_session_path, local: true, id: 'loginForm' do |form| %>
-  <div>
-    <%= form.label :email, "メールアドレス" %><br>
-    <%= form.email_field :email, autofocus: true, class: 'input-field', required: true %>
-  </div>
-
-  <div>
-    <%= form.label :password, "パスワード" %><br>
-    <%= form.password_field :password, class: 'input-field', required: true %>
-  </div>
-
-  <div>
-    <%= form.submit 'ログイン', class: 'submit-button' %>
-  </div>
-<% end %>
-
-<div class="password-reset-link-container">
-  <%= link_to 'パスワードを忘れた方はこちら', password_resets_path, class: 'button password-reset-link' %>
-</div>
-<%= link_to 'トップページに戻る', root_path, class: 'back-button' %>
-
-<footer>
+  <footer>
     <p>&copy; 2024 在庫ポケット</p>
-</footer>
+  </footer>
 
-<script>
-  document.getElementById("loginForm").addEventListener("submit", function(event) {
-    const emailField = document.querySelector("input[type='email']");
-    const passwordField = document.querySelector("input[type='password']");
-    let hasError = false;
+  <script>
+    document.getElementById("loginForm").addEventListener("submit", function(event) {
+      const emailField = document.querySelector("input[type='email']");
+      const passwordField = document.querySelector("input[type='password']");
+      let hasError = false;
 
-    // メールアドレスのエラーメッセージ設定
-    if (!emailField.value) {
-      emailField.setCustomValidity("メールアドレスを入力してください");
-      hasError = true;
-    } else {
-      emailField.setCustomValidity("");
-    }
+      if (!emailField.value) {
+        emailField.setCustomValidity("メールアドレスを入力してください");
+        hasError = true;
+      } else {
+        emailField.setCustomValidity("");
+      }
 
-    // パスワードのエラーメッセージ設定
-    if (!passwordField.value) {
-      passwordField.setCustomValidity("パスワードを入力してください");
-      hasError = true;
-    } else {
-      passwordField.setCustomValidity("");
-    }
+      if (!passwordField.value) {
+        passwordField.setCustomValidity("パスワードを入力してください");
+        hasError = true;
+      } else {
+        passwordField.setCustomValidity("");
+      }
 
-    // エラーがあればフォーム送信をブロック
-    if (hasError) {
-      event.preventDefault();
-    }
-  });
+      if (hasError) {
+        event.preventDefault();
+      }
+    });
 
-  // 入力中にエラーメッセージをリセット
-  document.querySelector("input[type='email']").addEventListener("input", function(event) {
-    event.target.setCustomValidity("");
-  });
+    document.querySelector("input[type='email']").addEventListener("input", function(event) {
+      event.target.setCustomValidity("");
+    });
 
-  document.querySelector("input[type='password']").addEventListener("input", function(event) {
-    event.target.setCustomValidity("");
-  });
-</script>
+    document.querySelector("input[type='password']").addEventListener("input", function(event) {
+      event.target.setCustomValidity("");
+    });
+  </script>
+</body>
+</html>
