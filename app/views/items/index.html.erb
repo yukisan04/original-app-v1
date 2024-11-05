@@ -1,33 +1,35 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>トップページ</title>
-    <%= stylesheet_link_tag 'styles', media: 'all' %>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>トップページ</title>
+  <%= stylesheet_link_tag 'styles', media: 'all' %>
 </head>
 <body>
-    <header>
-        <h1>在庫ポケット</h1>
-    </header>
+  <header>
+    <h1>在庫ポケット</h1>
+  </header>
 
-    <main>
-        <% if user_signed_in? %>
-            <h2>ようこそ、<%= current_user.nickname || current_user.email %>さん！</h2>
-            <p class="welcome-message">家族・友達と一緒に在庫を管理管理しよう！</p>
-            <div class="button-group">
-                <%= link_to 'ルームへ', rooms_path, class: 'button' %>
-                <%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: 'button' %>
-            </div>
-            <%= link_to 'お問い合わせはこちら', new_contact_path, class: 'button contact' %>
-            <%= link_to '更新情報はこちら', new_contact_path, class: 'button contact' %>
-        <% else %>
-            <h2>ログインまたは新規登録</h2>
-            <div class="button-group">
-                <%= link_to 'ログイン', new_user_session_path, class: 'button' %>
-                <%= link_to '新規登録', new_user_registration_path, class: 'button' %>
-            </div>
-        <% end %>
+  <main>
+    <% if user_signed_in? %>
+      <h2>ようこそ、<%= current_user.nickname || current_user.email %>さん！</h2>
+      <p class="welcome-message">家族・友達と一緒に在庫を管理管理しよう！</p>
+      <div class="button-group">
+        <%= link_to 'ルームへ', rooms_path, class: 'button' %>
+        <%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: 'button' %>
+      </div>
+      <div class="button-container">
+        <%= link_to 'お問い合わせはこちら', new_contact_path, class: 'button contact' %>
+        <%= link_to '更新情報はこちら', new_update_path, class: 'button contact2' %>
+      </div>
+    <% else %>
+      <h2>ログインまたは新規登録</h2>
+      <div class="button-group">
+        <%= link_to 'ログイン', new_user_session_path, class: 'button' %>
+        <%= link_to '新規登録', new_user_registration_path, class: 'button' %>
+      </div>
+    <% end %>
     </main>
 
     <footer>

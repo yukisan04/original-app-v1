@@ -70,10 +70,15 @@ footer {
   color: #888;
 }
 
-.contact {
-  position: fixed; /* 画面右下に固定 */
-  bottom: 20px;
-  right: 20px;
+.button-container {
+  position: fixed;
+  bottom: 20px; /* コンテナを画面の下に配置 */
+  right: 20px; /* コンテナを画面の右に配置 */
+  display: flex; /* ボタンを横並びにする */
+  gap: 10px; /* ボタンの間にスペースを追加 */
+}
+
+.contact, .contact2 {
   background-color: #4CAF50;
   padding: 10px 20px;
   color: white; /* テキストを見やすくするために白に設定 */
