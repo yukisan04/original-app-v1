@@ -71,9 +71,13 @@ footer {
 }
 
 .contact {
-  position: fixed;
+  position: fixed; /* 画面右下に固定 */
   bottom: 20px;
   right: 20px;
   background-color: #4CAF50;
   padding: 10px 20px;
+  color: white; /* テキストを見やすくするために白に設定 */
+  border-radius: 5px; /* ボタンの角を少し丸める */
+  text-align: center;
+  text-decoration: none; /* テキストの下線を消す */
 }
