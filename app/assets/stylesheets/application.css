@@ -33,3 +33,10 @@
 .btn:active {
   transform: translateY(0); /* クリック時に戻す */
 }
+
+/* フッターのスタイル */
+footer {
+  text-align: center;
+  margin-top: 20px;
+  color: #666;
+}
