@@ -15,12 +15,12 @@
   <div class="hamburger-menu">
     <span class="hamburger-icon" onclick="toggleMenu()">&#9776;</span>
     <div id="menu-content" class="menu-content">
-      <% unless current_page?(root_path) || current_page?(edit_user_registration_path) %>
+      <% unless current_page?(root_path) %>
         <%= link_to 'トップページに戻る', root_path, class: 'btn btn-warning' %>
       <% end %>
 
       <% if user_signed_in? %>
-        <% unless current_page?(root_path) || current_page?(edit_user_registration_path) %>
+        <% unless current_page?(root_path) %>
           <%= link_to 'アカウント編集', edit_user_registration_path, class: 'btn btn-warning' %>
         <% end %>
       <% end %>
@@ -29,12 +29,12 @@
 
   <!-- PC版のボタン配置 -->
   <div class="header-buttons" style="position: absolute; top: 10px; right: 10px;">
-    <% unless current_page?(root_path) || current_page?(edit_user_registration_path) %>
+    <% unless current_page?(root_path) %>
       <%= link_to 'トップページに戻る', root_path, class: 'btn btn-warning' %>
     <% end %>
 
     <% if user_signed_in? %>
-      <% unless current_page?(root_path) || current_page?(edit_user_registration_path) %>
+      <% unless current_page?(root_path) %>
         <%= link_to 'アカウント編集', edit_user_registration_path, class: 'btn btn-warning' %>
       <% end %>
     <% end %>
