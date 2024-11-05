@@ -2,28 +2,28 @@
 在庫管理アプリケーション
 
 # アプリケーション概要
-このアプリケーションは、家族や友人と共有できる在庫管理システムです。ユーザーはルームを作成し、アイテムの管理を行うことができます。
+このアプリケーションは、家族や友人と在庫を共有-管理ができるアプリです。ユーザーはルームを作成し、アイテムの管理を行うことができます。
 
 # ※機能はしますがまだ未完成です※
 ## URL : https://original-app-v1.onrender.com
 
 # テスト用アカウント
-・メールアドレス:sample1@sample.com
-・　パスワード　:Sample1
+- メールアドレス: sample1@sample.com
+- 　パスワード　: Sample1
 
-・メールアドレス:sample2@sample.com
-・　パスワード　:Sample2
+- メールアドレス: sample2@sample.com
+- 　パスワード　: Sample2
 
 # アプリケーションを作成した背景
 自身が親に何々の在庫がないと言わないのでアプリにして管理できるようにすればいいのかなと思ってアプリを作りました
 
 # 開発環境
-・Ruby: 3.2.0
-・Rails: 7.0.0
-・HTML/CSS
-・JavaScript
-・PostgreSQL/MySQL
-・RSpec
+- Ruby: 3.2.0
+- Rails: 7.0.0
+- HTML/CSS
+- JavaScript
+- PostgreSQL/MySQL
+- RSpec
 
 # 機能一覧
 
