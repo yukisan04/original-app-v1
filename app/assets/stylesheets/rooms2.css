@@ -73,3 +73,10 @@ input[type="submit"]:hover {
 .btn-warning:hover {
   background-color: darkorange; /* ホバー時の背景色 */
 }
+
+/* フッターのスタイル */
+footer {
+  text-align: center;
+  margin-top: 20px;
+  color: #666;
+}

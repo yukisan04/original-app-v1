@@ -92,3 +92,10 @@ input[type="number"]:focus {
   background-color: #ff8c00; /* ホバー時の色を少し暗くする */
   transform: scale(1.05); /* ホバー時に少し大きくなる */
 }
+
+/* フッターのスタイル */
+footer {
+  text-align: center;
+  margin-top: 20px;
+  color: #666;
+}

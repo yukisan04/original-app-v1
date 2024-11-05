@@ -153,6 +153,13 @@ form {
   margin: 0;
 }
 
+/* フッターのスタイル */
+footer {
+  text-align: center;
+  margin-top: 20px;
+  color: #666;
+}
+
 /* モバイル対応 */
 @media (max-width: 600px) {
   h2, .form-title {

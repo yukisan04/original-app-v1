@@ -259,3 +259,10 @@ h1 {
 .btn-secondary:hover {
   background-color: #1E90FF; /* ホバー時の色を少し濃くする */
 }
+
+/* フッターのスタイル */
+footer {
+  text-align: center;
+  margin-top: 20px;
+  color: #666;
+}

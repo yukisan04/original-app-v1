@@ -120,3 +120,10 @@ input[type="number"]:focus {
   max-width: 600px; /* 中央揃えのための最大幅設定 */
   margin: 20px auto;
 }
+
+/* フッターのスタイル */
+footer {
+  text-align: center;
+  margin-top: 20px;
+  color: #666;
+}
