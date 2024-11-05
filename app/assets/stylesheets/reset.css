@@ -77,3 +77,10 @@ input[type="email"]:focus {
 .btn-primary:hover {
   background-color: #66CDAA; /* ホバー時の背景色 */
 }
+
+/* フッターのスタイル */
+.footer {
+  text-align: center;
+  margin-top: 20px;
+  color: #666;
+}

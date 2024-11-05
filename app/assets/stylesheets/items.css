@@ -89,11 +89,12 @@ h1 {
 }
 
 /* フッターのスタイル */
-footer {
+.footer {
   text-align: center;
   margin-top: 20px;
   color: #666;
 }
+
 .required {
   color: #e74c3c; /* 赤色で必須を表示 */
   margin-left: 5px; /* ラベルとの間隔を空ける */

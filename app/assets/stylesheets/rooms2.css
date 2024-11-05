@@ -75,7 +75,7 @@ input[type="submit"]:hover {
 }
 
 /* フッターのスタイル */
-footer {
+.footer {
   text-align: center;
   margin-top: 20px;
   color: #666;
