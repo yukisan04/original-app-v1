@@ -7,13 +7,6 @@
   <%= csp_meta_tag %>
   <%= stylesheet_link_tag 'application', media: 'all', 'data-turbo-track': 'reload' %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-  <script>
-    // ハンバーガーメニューの表示・非表示を切り替えるスクリプト
-    function toggleMenu() {
-      var menu = document.getElementById("menu-content");
-      menu.style.display = menu.style.display === "block" ? "none" : "block";
-    }
-  </script>
 </head>
 
 <body>
@@ -50,5 +43,12 @@
 
 <%= yield %>
 <%= javascript_include_tag 'stocks' %>
+<script>
+  // ハンバーガーメニューの表示・非表示を切り替えるスクリプト
+  function toggleMenu() {
+    var menu = document.getElementById("menu-content");
+    menu.style.display = menu.style.display === "block" ? "none" : "block";
+  }
+</script>
 </body>
 </html>
