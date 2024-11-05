@@ -1,3 +1,5 @@
+/* hamburger_menu.css の内容を application.css に追加 */
+
 /* 基本のボタンスタイル */
 .btn {
   padding: 10px 15px;
@@ -6,39 +8,33 @@
   text-decoration: none;
   font-size: 16px;
   cursor: pointer;
-  transition: background-color 0.3s ease, transform 0.2s ease; /* スムーズな色の変化とアニメーション */
+  transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
 /* 青いボタンのスタイル */
 .btn-primary {
-  background-color: blue; /* 青 */
-  color: white; /* テキストの色 */
+  background-color: blue;
+  color: white;
 }
 
 /* オレンジのボタンのスタイル */
 .btn-warning {
-  background-color: orange; /* オレンジ */
-  color: white; /* テキストの色 */
-  padding: 12px 20px; /* 縦の余白を少し増やし、横の余白も増やす */
-  font-size: 18px; /* フォントサイズを少し大きく */
-  border-radius: 6px; /* ボタンの角を少し丸くする */
+  background-color: orange;
+  color: white;
+  padding: 12px 20px;
+  font-size: 18px;
+  border-radius: 6px;
 }
-/* ボタンにホバー効果を追加 */
+
+/* ボタンのホバー効果 */
 .btn:hover {
-  opacity: 0.8; /* ホバー時に少し透明に */
-  transform: translateY(-2px); /* ホバー時にボタンが上に動く */
+  opacity: 0.8;
+  transform: translateY(-2px);
 }
 
-/* アクティブ効果を追加 */
+/* ボタンのアクティブ効果 */
 .btn:active {
-  transform: translateY(0); /* クリック時に戻す */
-}
-
-/* フッターのスタイル */
-footer {
-  text-align: center;
-  margin-top: 20px;
-  color: #666;
+  transform: translateY(0);
 }
 
 /* スマホサイズ（768px以下）でヘッダーボタンを非表示、ハンバーガーメニューを表示 */
