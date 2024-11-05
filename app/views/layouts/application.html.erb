@@ -7,6 +7,14 @@
   <%= csp_meta_tag %>
   <%= stylesheet_link_tag 'application', media: 'all', 'data-turbo-track': 'reload' %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  <style>
+    /* スマホサイズ（768px以下）で非表示にする */
+    @media (max-width: 768px) {
+      .header-buttons {
+        display: none;
+      }
+    }
+  </style>
 </head>
 
 <body>
