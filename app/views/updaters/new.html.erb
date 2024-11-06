@@ -1,8 +1,28 @@
-<h1>更新情報一覧</h1>
-<% @updaters.each do |updater| %>
-  <div class="updater-item">
-    <h2><%= updater.title %></h2>
-    <p><%= updater.content %></p>
-    <p><small><%= updater.created_at.strftime("%Y-%m-%d %H:%M") %></small></p>
+<h1>新しい更新情報を追加</h1>
+<%= form_with model: @updater, local: true do |f| %>
+  <div class="field">
+    <%= f.label :title, "タイトル" %>
+    <%= f.text_field :title %>
+  </div>
+
+  <div class="field">
+    <%= f.label :content, "内容" %>
+    <%= f.text_area :content %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit "追加", class: 'button contact2' %>
   </div>
 <% end %>
+
+  <footer>
+    <p>&copy; 2024 在庫ポケット</p>
+    <style>
+      /* フッターのスタイル */
+      footer {
+        text-align: center;
+        margin-top: 20px;
+        color: #666;
+      }
+    </style>
+  </footer>
