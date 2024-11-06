@@ -4,6 +4,9 @@
     <h2><%= updater.title %></h2>
     <p><%= updater.content %></p>
     <p><small><%= updater.created_at.strftime("%Y-%m-%d %H:%M") %></small></p>
+    <% if current_user&.admin? %>
+      <%= link_to '更新情報を修正', edit_updater_path(updater), class: 'button contact2' %>
+    <% end %>
   </div>
 <% end %>
 

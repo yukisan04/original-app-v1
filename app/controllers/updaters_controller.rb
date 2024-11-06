@@ -1,9 +1,5 @@
 class UpdatersController < ApplicationController
-  before_action :authenticate_admin!, only: [:new]  # 管理者のみアクセス可能
-
-  def index
-    @updaters = Updater.all.order(created_at: :desc)
-  end
+  before_action :authenticate_admin!, only: [:edit, :update]
 
   def new
     @updater = Updater.new
@@ -18,8 +14,21 @@ class UpdatersController < ApplicationController
     end
   end
 
-  def admin?
-    self.admin
+  def index
+    @updaters = Updater.all.order(created_at: :desc)
+  end
+
+  def edit
+    @updater = Updater.find(params[:id])
+  end
+
+  def update
+    @updater = Updater.find(params[:id])
+    if @updater.update(updater_params)
+      redirect_to updaters_path, notice: '更新情報が修正されました'
+    else
+      render :edit
+    end
   end
 
   private

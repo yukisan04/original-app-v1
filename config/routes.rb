@@ -18,6 +18,6 @@ Rails.application.routes.draw do
 
   resources :items
   resources :contacts, only: [:new, :create]
-  resources :updaters, only: [:new, :create, :index]
+  resources :updaters, only: [:new, :create, :index, :edit, :update]
   resources :password_resets, only: [:new, :create, :index]
 end
