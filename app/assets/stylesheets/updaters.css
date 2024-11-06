@@ -1,0 +1,59 @@
+/* 背景と全体のスタイル */
+body {
+  background-color: #e6f2e6; /* 柔らかい緑 */
+  font-family: Arial, sans-serif;
+}
+
+h1 {
+  color: #2e8b57; /* 深緑 */
+  text-align: center;
+  font-size: 2.5em;
+  margin-bottom: 1.5em;
+}
+
+/* 更新情報のコンテナ */
+.updater-item {
+  background-color: #f0fff0; /* 優しい薄い緑 */
+  border: 1px solid #cce7cc;
+  border-radius: 8px;
+  padding: 20px;
+  margin: 15px 0;
+  box-shadow: 0px 4px 6px rgba(0, 128, 0, 0.1);
+}
+
+/* タイトル */
+.updater-item h2 {
+  color: #006400; /* 深緑 */
+  margin-bottom: 0.8em;
+}
+
+/* 内容 */
+.updater-item p {
+  color: #556b2f; /* オリーブグリーン */
+  line-height: 1.6;
+  margin-bottom: 1em;
+}
+
+/* 作成日時 */
+.updater-item small {
+  color: #808080;
+  font-size: 0.9em;
+}
+
+/* リストのボタン */
+.button.contact2 {
+  background-color: #8fbc8f; /* 淡い緑 */
+  color: white;
+  padding: 12px 25px;
+  border-radius: 5px;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.button.contact2:hover {
+  background-color: #6b8e23; /* 少し濃いグリーン */
+}
+
+/* フォーム部分を削除したので不要 */

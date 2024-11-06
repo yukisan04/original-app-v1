@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2024_11_02_042448) do
+ActiveRecord::Schema[7.0].define(version: 2024_11_06_053723) do
   create_table "active_storage_attachments", charset: "utf8mb3", force: :cascade do |t|
     t.string "name", null: false
     t.string "record_type", null: false
@@ -93,6 +93,13 @@ ActiveRecord::Schema[7.0].define(version: 2024_11_02_042448) do
     t.string "image_url"
     t.string "external_image_url"
     t.index ["room_id"], name: "index_stocks_on_room_id"
+  end
+
+  create_table "updaters", charset: "utf8mb3", force: :cascade do |t|
+    t.string "title"
+    t.text "content"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "users", charset: "utf8mb3", force: :cascade do |t|

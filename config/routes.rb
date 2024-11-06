@@ -17,10 +17,7 @@ Rails.application.routes.draw do
   end
 
   resources :items
-
-  # Contactsリソースを追加
   resources :contacts, only: [:new, :create]
-
-  # パスワードリセットのルーティングを追加
+  resources :updaters, only: [:new, :create, :index]
   resources :password_resets, only: [:new, :create, :index]
 end

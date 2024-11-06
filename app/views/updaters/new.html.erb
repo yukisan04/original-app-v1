@@ -1,0 +1,8 @@
+<h1>更新情報一覧</h1>
+<% @updaters.each do |updater| %>
+  <div class="updater-item">
+    <h2><%= updater.title %></h2>
+    <p><%= updater.content %></p>
+    <p><small><%= updater.created_at.strftime("%Y-%m-%d %H:%M") %></small></p>
+  </div>
+<% end %>
