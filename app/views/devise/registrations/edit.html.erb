@@ -45,7 +45,13 @@
 <%= link_to 'トップページに戻る', root_path, class: 'back-button' %>
 <h3 class="delete-account-title">↓アカウントを削除する↓</h3>
 
-<%= button_to "アカウントを削除", registration_path(resource_name), method: :delete, class: 'cancel-button', data: { confirm: "本当にアカウントを削除しますか？この操作は元に戻せません。" } %>
+<%= button_to "アカウントを削除", registration_path(resource_name), method: :delete, class: 'cancel-button', data: { confirm: "本当にアカウントを削除しますか？この操作は元に戻せません。" }, onclick: "return confirmFinalDelete();" %>
+
+<script>
+  function confirmFinalDelete() {
+    return confirm("最終確認です。本当にアカウントを削除してもよろしいですか？この操作は元に戻せません。");
+  }
+</script>
 
 <footer>
     <p>&copy; 2024 在庫ポケット</p>
