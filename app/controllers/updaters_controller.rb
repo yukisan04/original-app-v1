@@ -1,5 +1,5 @@
 class UpdatersController < ApplicationController
-  before_action :authenticate_admin!, only: [:edit, :update]
+  before_action :authenticate_admin!, only: [:new, :edit, :update]
 
   def new
     @updater = Updater.new
