@@ -67,6 +67,8 @@
 # データベース設計
 ![データベース設計](https://github.com/user-attachments/assets/da00f408-0aa3-4c2b-93a2-ea138cf0ccc6)
 
+# 画面遷移図
+![画面遷移図](https://github.com/user-attachments/assets/04122bfb-a720-48e7-812b-67af11db807e)
 # テーブル一覧
 
 ## users テーブル

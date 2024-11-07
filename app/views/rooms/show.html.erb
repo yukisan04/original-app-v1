@@ -66,7 +66,13 @@
 <div class="fixed-buttons">
   <%= link_to 'ルーム一覧に戻る', rooms_path, class: "btn btn-secondary fixed" %>
   <%= link_to '参加者一覧', room_participants_path(@room), class: "btn btn-participants fixed" %>
-  <%= button_to '部屋を削除', @room, method: :delete, class: "btn btn-delete fixed" %>
+  <%= button_to '部屋を削除', @room, method: :delete, class: "btn btn-delete fixed", data: { confirm: "本当にこの部屋を削除しますか？削除した情報は元に戻せません。" }, onclick: "return confirmFinalDelete();" %>
 </div>
+
+<script>
+  function confirmFinalDelete() {
+    return confirm("最終確認です。本当にこの部屋を削除してもよろしいですか？削除した情報は元に戻せません。");
+  }
+</script>
 
 <%= javascript_include_tag 'stocks', 'data-turbo-track': 'reload' %>
