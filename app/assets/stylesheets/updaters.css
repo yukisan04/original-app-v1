@@ -56,4 +56,20 @@ h1 {
   background-color: #6b8e23; /* 少し濃いグリーン */
 }
 
-/* フォーム部分を削除したので不要 */
+/* 更新情報を追加ボタン */
+.fixed-add-button {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  background-color: #ff6347; /* トマト色 */
+  color: white;
+  padding: 12px 20px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: bold;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.fixed-add-button:hover {
+  background-color: #e5533d; /* 少し濃いトマト色 */
+}
