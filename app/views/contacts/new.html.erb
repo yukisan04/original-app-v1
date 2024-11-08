@@ -26,7 +26,8 @@
 
     <div class="field">
       <%= form.label :email, 'メールアドレス', class: 'inline-label' %>
-      <%= form.email_field :email, required: true, class: 'input-field', placeholder: '例: sample@example.com' %>
+      <!-- ログインしているユーザーのメールアドレスを自動で入力 -->
+      <%= form.email_field :email, value: current_user.email, required: true, class: 'input-field', placeholder: '例: sample@example.com' %>
     </div>
 
     <div class="field">

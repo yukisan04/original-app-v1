@@ -1,69 +1,54 @@
-/* 返信フォームのタイトル */
-.reply-form-title {
-  text-align: center;
-  color: #34495e;
-  font-size: 24px;
-  margin-bottom: 20px;
-}
-
-/* フォーム全体のスタイル */
-.reply-form {
-  max-width: 600px;
+/* チャットのレイアウト */
+.chat-room {
+  max-width: 800px;
   margin: 0 auto;
   padding: 20px;
-  background-color: #ffffff;
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-/* フォームグループ */
-.form-group {
-  margin-bottom: 15px;
-}
-
-/* ラベルのスタイル */
-.form-label {
-  font-size: 16px;
-  color: #2c3e50;
-  margin-bottom: 5px;
-  display: block;
-}
-
-/* テキストエリアのスタイル */
-.form-control {
-  width: 100%;
-  padding: 10px;
-  font-size: 14px;
+  background-color: #f9f9f9;
   border: 1px solid #ddd;
-  border-radius: 4px;
-  resize: vertical;
+  border-radius: 8px;
 }
 
-/* 送信ボタン */
-.btn-submit {
-  background-color: #3498db;
+.message {
+  background-color: #e1f7d5;
+  padding: 10px;
+  margin: 10px 0;
+  border-radius: 5px;
+}
+
+.message strong {
+  color: #5a5a5a;
+}
+
+.btn {
+  background-color: #ff8c00;
+  padding: 10px;
   color: white;
-  border: none;
-  padding: 10px 20px;
-  font-size: 16px;
-  border-radius: 4px;
-  cursor: pointer;
-  display: block;
+  border-radius: 5px;
+  text-decoration: none;
+}
+
+.btn:hover {
+  background-color: #e67e00;
+}
+
+.btn-back {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+}
+
+.btn-close {
+  background-color: #f44336;
+}
+
+.btn-reply {
+  background-color: #4CAF50;
+}
+
+.chat-room textarea {
   width: 100%;
-  margin-top: 20px;
-  transition: background-color 0.3s ease;
-}
-
-.btn-submit:hover {
-  background-color: #2980b9;
-}
-
-/* レスポンシブ対応 */
-@media (max-width: 600px) {
-  .reply-form {
-    padding: 15px;
-  }
-  .btn-submit {
-    padding: 12px 15px;
-  }
+  height: 100px;
+  border-radius: 5px;
+  padding: 10px;
+  margin-top: 10px;
 }

@@ -16,10 +16,10 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :contacts, only: [:new, :create, :index] do
+  resources :contacts, only: [:index, :show, :new, :create] do
     member do
-      post 'create_reply'  # 返信を作成するアクション
-      get 'reply'  # 返信ページのルーティング
+      patch 'resolve'  # 解決済みにする
+      patch 'reopen'   # 再オープン
     end
   end
 

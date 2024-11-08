@@ -1,32 +1,51 @@
 class ContactsController < ApplicationController
-  before_action :authenticate_user! # ログイン確認
-  before_action :require_admin_or_owner, only: [:index, :create_reply] # 権限チェックを修正
+  before_action :authenticate_user!
+  before_action :set_contact, only: [:show, :edit, :update, :destroy, :resolve, :reopen]
+
+  def index
+    @contacts = Contact.order(created_at: :desc).page(params[:page]).per(10)
+  end
 
   def new
     @contact = Contact.new
+    @contact.email = current_user.email
+  end
+
+  def show
+    @reply = @contact.replies.build
   end
 
   def create
     @contact = current_user.contacts.new(contact_params)
+
     if @contact.save
-      redirect_back(fallback_location: root_path, notice: 'お問い合わせが送信されました。')
+      redirect_to contacts_path, notice: 'お問い合わせが送信されました。'
     else
-      render :new
+      render :new, status: :unprocessable_entity
     end
   end
 
-  def index
-    @contacts = Contact.order(created_at: :desc).page(params[:page]).per(10) # 1ページあたり10件表示
-  end
-
   def create_reply
-    @contact = Contact.find(params[:contact_id])
     @reply = @contact.replies.build(reply_params)
     @reply.user = current_user
     if @reply.save
-      redirect_to contacts_path, notice: '返信が送信されました。'
+      redirect_to contact_path(@contact), notice: '返信が送信されました。'
     else
-      render :index
+      render :show, status: :unprocessable_entity
+    end
+  end
+
+  def resolve
+    @contact.closed!
+    redirect_to contact_path(@contact), notice: 'お問い合わせが解決済みとなりました。'
+  end
+
+  def reopen
+    if current_user.admin?
+      @contact.update(status: :open)
+      redirect_to @contact, notice: '問い合わせが再度オープンにされました。'
+    else
+      redirect_to contacts_path, alert: '権限がありません。'
     end
   end
 
@@ -36,16 +55,8 @@ class ContactsController < ApplicationController
     params.require(:contact).permit(:email, :content)
   end
 
-  def require_admin_or_owner
-    if action_name == 'index'
-      @contact = nil
-    else
-      @contact = Contact.find(params[:contact_id])
-    end
-
-    unless current_user.admin? || (current_user == @contact&.user)
-      redirect_to root_path, alert: "閲覧権限がありません。"
-    end
+  def set_contact
+    @contact = Contact.find(params[:id])
   end
 
   def reply_params

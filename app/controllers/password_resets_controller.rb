@@ -16,7 +16,7 @@ class PasswordResetsController < ApplicationController
       redirect_to root_path, notice: "パスワードリセットのメールを送信しました。"
     else
       flash.now[:alert] = "メールアドレスが見つかりませんでした。"
-      render :new
+      render :new, status: :unprocessable_entity
     end
   end
 

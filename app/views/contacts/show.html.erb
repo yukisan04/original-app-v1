@@ -1,0 +1,49 @@
+<%= stylesheet_link_tag 'contacts1', media: 'all', 'data-turbo-track': 'reload' %>
+<h1>お問い合わせ詳細</h1>
+
+<div class="chat-room">
+  <!-- 最初の問い合わせ内容の表示 -->
+  <div class="initial-contact">
+    <p><strong>お問い合わせ内容:</strong></p>
+    <p><%= @contact.content %></p>
+  </div>
+
+  <!-- チャット（返信）の表示 -->
+  <% if @contact.replies.any? %>
+    <% @contact.replies.each do |reply| %>
+      <div class="message">
+        <% if reply.user %>
+          <p><strong><%= reply.user.name %>:</strong> <%= reply.content %></p>
+        <% else %>
+          <p><strong>匿名:</strong> <%= reply.content %></p>
+        <% end %>
+      </div>
+    <% end %>
+  <% else %>
+    <p>まだ返信はありません。</p>
+  <% end %>
+
+  <!-- 返信フォーム（お問い合わせが「open」の場合のみ表示） -->
+  <% if @contact.status == 'open' %>
+    <%= form_with(model: [@contact, @contact.replies.build], local: true) do |form| %>
+      <div class="field">
+        <%= form.text_area :content, placeholder: '返信内容を入力...', required: true %>
+      </div>
+      <%= form.submit '返信', class: 'btn btn-reply' %>
+    <% end %>
+  <% else %>
+    <p>解決済みのため、これ以上返信はできません。</p>
+  <% end %>
+
+  <!-- 管理者が「解決済みにする」ボタンを表示 -->
+  <% if current_user.admin? && @contact.status == 'open' %>
+    <%= link_to '解決済みにする', resolve_contact_path(@contact), method: :patch, class: 'btn btn-close' %>
+  <% end %>
+
+  <%= link_to 'お問い合わせ一覧に戻る', contacts_path, class: 'btn btn-back' %>
+
+  <!-- 管理者が「再オープン」ボタンを表示 -->
+  <% if current_user.admin? && @contact.status == 'closed' %>
+    <%= link_to '再オープン', reopen_contact_path(@contact), method: :patch, class: 'btn btn-reopen' %>
+  <% end %>
+</div>

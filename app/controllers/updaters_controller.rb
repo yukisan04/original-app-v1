@@ -10,7 +10,7 @@ class UpdatersController < ApplicationController
     if @updater.save
       redirect_to updaters_path, notice: '更新情報が追加されました'
     else
-      render :new
+      render :new, status: :unprocessable_entity
     end
   end
 
@@ -27,7 +27,7 @@ class UpdatersController < ApplicationController
     if @updater.update(updater_params)
       redirect_to updaters_path, notice: '更新情報が修正されました'
     else
-      render :edit
+      render :edit, status: :unprocessable_entity
     end
   end
 
