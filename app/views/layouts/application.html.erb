@@ -17,28 +17,24 @@
   <div class="hamburger-menu">
     <span class="hamburger-icon" onclick="toggleMenu()">&#9776;</span>
     <div id="menu-content" class="menu-content">
-      <% unless current_page?(root_path) %>
+      <% if !current_page?(root_path) %>
         <%= link_to 'トップページに戻る', root_path, class: 'btn btn-warning' %>
       <% end %>
 
       <% if user_signed_in? %>
-        <% unless current_page?(root_path) || current_page?(edit_user_registration_path) %>
-          <%= link_to 'アカウント編集', edit_user_registration_path, class: 'btn btn-warning' %>
-        <% end %>
+        <%= link_to 'アカウント編集', edit_user_registration_path, class: 'btn btn-warning' %>
       <% end %>
     </div>
   </div>
 
   <!-- PC版のボタン配置 -->
   <div class="header-buttons" style="position: absolute; top: 10px; right: 10px;">
-    <% unless current_page?(root_path) %>
+    <% if !current_page?(root_path) %>
       <%= link_to 'トップページに戻る', root_path, class: 'btn btn-warning' %>
     <% end %>
 
     <% if user_signed_in? %>
-      <% unless current_page?(root_path) || current_page?(edit_user_registration_path) %>
-        <%= link_to 'アカウント編集', edit_user_registration_path, class: 'btn btn-warning' %>
-      <% end %>
+      <%= link_to 'アカウント編集', edit_user_registration_path, class: 'btn btn-warning' %>
     <% end %>
   </div>
 </header>
@@ -48,18 +44,14 @@
 <script>
   // ページ読み込み時にハンバーガーメニューを非表示にする
   document.addEventListener("DOMContentLoaded", function() {
-    var menu = document.getElementById("menu-content");
+    const menu = document.getElementById("menu-content");
     menu.style.display = "none"; // 初期状態で非表示
   });
 
   // ハンバーガーメニューの表示・非表示を切り替えるスクリプト
   function toggleMenu() {
-    var menu = document.getElementById("menu-content");
-    if (menu.style.display === "block" || menu.style.display === "") {
-      menu.style.display = "none";
-    } else {
-      menu.style.display = "block";
-    }
+    const menu = document.getElementById("menu-content");
+    menu.style.display = (menu.style.display === "block") ? "none" : "block";
   }
 </script>
 </body>
