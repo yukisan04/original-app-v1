@@ -266,3 +266,82 @@ footer {
   margin-top: 20px;
   color: #666;
 }
+
+/* モバイル対応: 画面幅が600px以下の場合 */
+@media (max-width: 600px) {
+  /* 全体のレイアウト */
+  body {
+    padding: 10px;
+  }
+
+  h1 {
+    font-size: 20px;
+    padding: 10px 20px;
+  }
+
+  .room-details h2 {
+    font-size: 18px;
+    padding: 8px 15px;
+  }
+
+  .stock-info {
+    font-size: 14px; /* 商品名のフォントサイズを小さく */
+    text-align: left; /* 左寄せに */
+  }
+
+  /* 在庫アイテムのスタイル */
+  .stock-item {
+    font-size: 14px;
+    padding: 8px;
+  }
+
+  /* 在庫詳細のフレックスレイアウト */
+  .stock-details {
+    flex-direction: column; /* 商品画像と情報を縦並び */
+    align-items: center;
+  }
+
+  .stock-image {
+    width: 80px; /* 画像を小さく */
+    margin-bottom: 10px; /* 画像と情報の間に余白 */
+  }
+
+  .search-box {
+    width: 100%; /* 幅を100%にして、全幅を使う */
+    margin-bottom: 10px; /* 下に余白 */
+  }
+
+  /* ボタンのサイズ */
+  .btn, .btn-warning, .btn-update, .btn-edit, .btn-delete {
+    font-size: 14px; /* ボタンの文字サイズを少し小さく */
+    padding: 8px 12px; /* ボタンの内側の余白 */
+    width: 100%; /* ボタンを全幅に */
+    box-sizing: border-box; /* ボタンの幅が親要素に合わせて広がるように */
+    margin-bottom: 10px; /* ボタンの間に余白を追加 */
+  }
+
+  /* 固定ボタンのスタイル */
+  .fixed-buttons {
+    bottom: 10px;
+    right: 10px;
+    flex-direction: column; /* ボタンを縦並びに */
+    gap: 5px;
+  }
+
+  /* ソートボタン */
+  .btn-sort {
+    width: 100%; /* 幅を100%に */
+    font-size: 14px; /* フォントサイズを小さく */
+  }
+
+  /* 在庫詳細の更新ボタン */
+  .btn-update {
+    width: 100%; /* ボタンを全幅に */
+  }
+
+  /* 在庫アイテムのアクションボタン */
+  .action-buttons {
+    flex-direction: column; /* アクションボタンを縦に並べる */
+    align-items: center; /* 中央揃え */
+  }
+}
