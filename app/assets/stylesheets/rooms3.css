@@ -325,7 +325,6 @@ footer {
   /* ボタンのサイズ */
   .btn, .btn-warning, .btn-update, .btn-edit, .btn-delete {
     font-size: 14px; /* ボタンの文字サイズを少し小さく */
-    padding: 8px 12px; /* ボタンの内側の余白 */
     margin-bottom: 10px; /* ボタンの間に余白を追加 */
   }
 
@@ -340,11 +339,6 @@ footer {
   .btn-sort {
     width: 100%; /* 幅を100%に */
     font-size: 14px; /* フォントサイズを小さく */
-  }
-
-  /* 在庫詳細の更新ボタン */
-  .btn-update {
-    width: 100%; /* ボタンを全幅に */
   }
 
   /* 在庫アイテムのアクションボタン */
@@ -379,5 +373,11 @@ footer {
     font-size: 13px;
     border: 2px solid black; /* 黒い枠線 */
     background-color: purple; /* 紫色の背景 */
+  }
+
+  /* ボタン配置のスタイル */
+  .add-stock {
+    margin-top: 10px; /* 上部に余白を追加 */
+    margin-bottom: 20px; /* 下部に余白を追加 */
   }
 }
