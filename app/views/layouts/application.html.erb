@@ -21,7 +21,7 @@
         <%= link_to 'トップページに戻る', root_path, class: 'btn btn-warning' %>
       <% end %>
 
-      <% if user_signed_in? %>
+      <% if user_signed_in? && !current_page?(edit_user_registration_path) %>
         <%= link_to 'アカウント編集', edit_user_registration_path, class: 'btn btn-warning' %>
       <% end %>
     </div>
@@ -33,7 +33,7 @@
       <%= link_to 'トップページに戻る', root_path, class: 'btn btn-warning' %>
     <% end %>
 
-    <% if user_signed_in? %>
+    <% if user_signed_in? && !current_page?(edit_user_registration_path) %>
       <%= link_to 'アカウント編集', edit_user_registration_path, class: 'btn btn-warning' %>
     <% end %>
   </div>
