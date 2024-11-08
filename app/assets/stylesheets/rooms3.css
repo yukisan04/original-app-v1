@@ -50,12 +50,12 @@ h1 {
 
 /* ボタンの共通スタイル */
 .btn {
+  height: 40px;
   padding: 10px 15px;
   border-radius: 5px;
   text-decoration: none;
   color: white;
   transition: background-color 0.3s;
-  height: 40px;
   width: auto; /* ボタンの幅を自動に設定 */
 }
 
@@ -265,6 +265,17 @@ footer {
   text-align: center;
   margin-top: 20px;
   color: #666;
+}
+
+/* ボタンの共通スタイル */
+.btn1 {
+  height: 0px;
+  padding: 10px 15px;
+  border-radius: 5px;
+  text-decoration: none;
+  color: white;
+  transition: background-color 0.3s;
+  width: auto; /* ボタンの幅を自動に設定 */
 }
 
 /* モバイル対応: 画面幅が600px以下の場合 */

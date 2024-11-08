@@ -10,7 +10,7 @@
   <div class="stock-controls" style="text-align: center;">
     <!-- 検索ボックス -->
     <input type="text" id="search" placeholder="在庫を検索..." class="search-box">
-    <%= link_to '在庫を追加', new_room_stock_path(@room), class: "btn btn-warning" %>
+    <%= link_to '在庫を追加', new_room_stock_path(@room), class: "btn1 btn-warning" %>
 
     <select id="sort-options" class="btn btn-sort">
       <option value="low-stock" class="low-stock">在庫が少ない順に表示</option>
@@ -65,7 +65,7 @@
 <!-- 固定ボタン -->
 <div class="fixed-buttons">
   <%= link_to 'ルーム一覧に戻る', rooms_path, class: "btn btn-secondary fixed" %>
-  <%= link_to '参加者一覧', room_participants_path(@room), class: "btn btn-participants fixed" %>
+  <%= link_to '参加者一覧', room_participants_path(@room), class: "btn1 btn-participants fixed" %>
   <%= button_to '部屋を削除', @room, method: :delete, class: "btn btn-delete fixed", data: { confirm: "本当にこの部屋を削除しますか？削除した情報は元に戻せません。" }, onclick: "return confirmFinalDelete();" %>
 </div>
 
