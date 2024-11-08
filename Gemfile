@@ -81,6 +81,7 @@ gem 'mini_magick'
 gem 'image_processing', '~> 1.2'
 gem 'bcrypt', '~> 3.1.7'
 gem 'aws-sdk-s3'
+gem 'kaminari'
 group :production do
   gem 'pg'
 end

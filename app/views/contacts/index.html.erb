@@ -1,38 +1,16 @@
 <%= stylesheet_link_tag 'contacts', media: 'all', 'data-turbo-track': 'reload' %>
 <h1>お問い合わせ内容一覧</h1>
+
 <% if @contacts.present? %>
   <% @contacts.each do |contact| %>
     <div class="contact-item">
-      <p class="contact-sender">送信者: <%= contact.user.email %></p>
-      <p class="contact-content">お問い合わせ内容: <%= contact.content.present? ? contact.content : "お問い合わせ内容が記入されていません。" %></p>
-      <p class="contact-timestamp"><small><%= contact.created_at.strftime("%Y-%m-%d %H:%M") %></small></p>
-
-      <!-- 返信一覧表示 -->
-      <div class="replies">
-        <% if contact.replies.any? %>
-          <% contact.replies.each do |reply| %>
-            <div class="reply-item">
-              <p>返信: <%= reply.content %></p>
-              <p><small><%= reply.created_at.strftime("%Y-%m-%d %H:%M") %></small></p>
-            </div>
-          <% end %>
-        <% else %>
-          <p>返信はまだありません。</p>
-        <% end %>
-      </div>
-
-      <!-- 返信フォーム -->
-      <%= form_with model: [contact, Reply.new], url: create_reply_contact_path(contact), local: true do |form| %>
-        <div class="field">
-          <%= form.label :content, '返信内容' %>
-          <%= form.text_area :content, rows: 3, required: true, placeholder: '返信を入力してください' %>
-        </div>
-        <div class="actions">
-          <%= form.submit '返信する', class: 'btn btn-secondary' %>
-        </div>
-      <% end %>
+      <p>送信者: <%= contact.user.email %></p>
+      <p>お問い合わせ内容: <%= contact.content.present? ? contact.content : "お問い合わせ内容が記入されていません。" %></p>
+      <p><small><%= contact.created_at.strftime("%Y-%m-%d %H:%M") %></small></p>
     </div>
   <% end %>
+
+  <%= paginate @contacts %> <!-- ページネーションリンクを表示 -->
 <% else %>
-  <p class="no-contacts">現在お問い合わせ内容はありません。</p>
+  <p>現在お問い合わせ内容はありません。</p>
 <% end %>

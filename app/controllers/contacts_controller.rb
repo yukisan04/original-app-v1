@@ -9,14 +9,14 @@ class ContactsController < ApplicationController
   def create
     @contact = current_user.contacts.new(contact_params)
     if @contact.save
-      redirect_to root_path, notice: 'お問い合わせが送信されました。'
+      redirect_back(fallback_location: root_path, notice: 'お問い合わせが送信されました。')
     else
       render :new
     end
   end
 
   def index
-    @contacts = Contact.all
+    @contacts = Contact.order(created_at: :desc).page(params[:page]).per(10) # 1ページあたり10件表示
   end
 
   def create_reply
