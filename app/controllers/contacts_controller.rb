@@ -1,6 +1,6 @@
 class ContactsController < ApplicationController
   before_action :authenticate_user! # ログイン確認
-  before_action :require_admin_or_owner, only: [:index] # 権限チェック
+  before_action :require_admin_or_owner, only: [:index, :create_reply] # 権限チェックを修正
 
   def new
     @contact = Contact.new
@@ -22,6 +22,7 @@ class ContactsController < ApplicationController
   def create_reply
     @contact = Contact.find(params[:contact_id])
     @reply = @contact.replies.build(reply_params)
+    @reply.user = current_user
     if @reply.save
       redirect_to contacts_path, notice: '返信が送信されました。'
     else
@@ -36,7 +37,13 @@ class ContactsController < ApplicationController
   end
 
   def require_admin_or_owner
-    unless current_user.admin? || current_user == @contact.user
+    if action_name == 'index'
+      @contact = nil
+    else
+      @contact = Contact.find(params[:contact_id])
+    end
+
+    unless current_user.admin? || (current_user == @contact&.user)
       redirect_to root_path, alert: "閲覧権限がありません。"
     end
   end

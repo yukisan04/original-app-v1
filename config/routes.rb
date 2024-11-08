@@ -16,12 +16,14 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :contacts do
-    post 'create_reply', on: :member
+  resources :contacts, only: [:new, :create, :index] do
+    member do
+      post 'create_reply'  # 返信を作成するアクション
+      get 'reply'  # 返信ページのルーティング
+    end
   end
 
   resources :items
-  resources :contacts, only: [:new, :create, :index]
   resources :updaters, only: [:new, :create, :index, :edit, :update]
   resources :password_resets, only: [:new, :create, :index]
 end
