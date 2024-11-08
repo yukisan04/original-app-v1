@@ -337,14 +337,7 @@ footer {
 
   /* ソートボタン */
   .btn-sort {
-    width: 100%; /* 幅を100%に */
     font-size: 14px; /* フォントサイズを小さく */
-  }
-
-  /* 在庫アイテムのアクションボタン */
-  .action-buttons {
-    flex-direction: column; /* アクションボタンを縦に並べる */
-    align-items: center; /* 中央揃え */
   }
 
   /* 編集ボタンのスタイル */
