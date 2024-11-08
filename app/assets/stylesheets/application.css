@@ -35,6 +35,14 @@
   transform: translateY(0);
 }
 
+/* 右上ボタンを固定 */
+.header-buttons {
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  z-index: 1000;
+}
+
 /* スマホサイズ（768px以下）でヘッダーボタンを非表示、ハンバーガーメニューを表示 */
 @media (max-width: 768px) {
   .header-buttons {
