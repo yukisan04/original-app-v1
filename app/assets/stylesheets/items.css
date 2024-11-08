@@ -75,7 +75,7 @@ h1 {
 
 /* ボタンのスタイル */
 .btn {
-  background-color: #007bff; /* プライマリカラー */
+  background-color: orange;
   color: white;
   padding: 10px 15px;
   border: none;
@@ -84,8 +84,10 @@ h1 {
   font-size: 16px; /* フォントサイズ */
 }
 
+/* ボタンのホバー効果 */
 .btn:hover {
-  background-color: #0056b3; /* ホバー時の色 */
+  opacity: 0.8;
+  transform: translateY(-2px);
 }
 
 /* フッターのスタイル */
