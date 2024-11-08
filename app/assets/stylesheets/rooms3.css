@@ -315,8 +315,6 @@ footer {
   .btn, .btn-warning, .btn-update, .btn-edit, .btn-delete {
     font-size: 14px; /* ボタンの文字サイズを少し小さく */
     padding: 8px 12px; /* ボタンの内側の余白 */
-    width: 100%; /* ボタンを全幅に */
-    box-sizing: border-box; /* ボタンの幅が親要素に合わせて広がるように */
     margin-bottom: 10px; /* ボタンの間に余白を追加 */
   }
 
@@ -324,7 +322,6 @@ footer {
   .fixed-buttons {
     bottom: 10px;
     right: 10px;
-    flex-direction: column; /* ボタンを縦並びに */
     gap: 5px;
   }
 
@@ -343,5 +340,33 @@ footer {
   .action-buttons {
     flex-direction: column; /* アクションボタンを縦に並べる */
     align-items: center; /* 中央揃え */
+  }
+
+  /* 編集ボタンのスタイル */
+  .btn-edit {
+    line-height: 20px; /* 高さに合わせて行の高さを設定し、テキストを中央に配置 */
+    font-size: 13px;
+    border: 2px solid black; /* 黒い枠線 */
+    background-color: #007BFF; /* 明るい青の背景 */
+  }
+
+  .btn-secondary {
+    line-height: 20px; /* 高さに合わせて行の高さを設定し、テキストを中央に配置 */
+    font-size: 13px;
+    border: 2px solid black; /* 黒い枠線 */
+    background-color: #00BFFF; /* 水色 */
+    color: white; /* テキストの色 */
+    padding: 10px 20px; /* パディングを追加 */
+    border-radius: 5px; /* 角を丸める */
+    text-decoration: none; /* 下線を削除 */
+    display: inline-block; /* インラインブロックにする */
+  }
+
+  /* 参加者一覧ボタンのスタイル */
+.btn-participants {
+    line-height: 20px; /* 高さに合わせて行の高さを設定し、テキストを中央に配置 */
+    font-size: 13px;
+    border: 2px solid black; /* 黒い枠線 */
+    background-color: purple; /* 紫色の背景 */
   }
 }
