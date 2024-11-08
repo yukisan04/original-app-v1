@@ -7,6 +7,8 @@
   font-size: 16px;
   cursor: pointer;
   transition: background-color 0.3s ease, transform 0.2s ease;
+  display: inline-block; /* 横並びに対応 */
+  white-space: nowrap; /* テキストが改行されないようにする */
 }
 
 /* 青いボタンのスタイル */
@@ -22,6 +24,7 @@
   padding: 12px 20px;
   font-size: 18px;
   border-radius: 6px;
+  white-space: nowrap; /* テキストが改行されないようにする */
 }
 
 /* ボタンのホバー効果 */
@@ -87,17 +90,23 @@
   padding: 10px;
   border-radius: 5px;
   z-index: 1000;
+  text-align: center; /* ボタンを中央寄せ */
 }
 
+/* メニュー内のリンクの横並び対応 */
 .menu-content a {
-  display: block;
-  padding: 5px 0;
+  display: inline-block; /* 横並びに対応 */
+  margin: 5px 0; /* ボタン間の余白 */
   color: #333;
   text-decoration: none;
+  padding: 10px 15px;
+  border-radius: 4px;
+  background-color: orange; /* オレンジ色に統一 */
+  color: white;
 }
 
 .menu-content a:hover {
-  background-color: #f0f0f0;
+  background-color: #f0a500; /* ホバー時の色調整 */
 }
 
 /* フッターのスタイル */
