@@ -1,44 +1,48 @@
 <%= stylesheet_link_tag 'items', media: 'all', 'data-turbo-track': 'reload' %>
 <div class="stock-controls" style="text-align: center;">
-<h1>お問い合わせ</h1>
+  <h1>お問い合わせ</h1>
 
-<div class="notice">
-  <h2>注意事項</h2>
-  <ul>
-    <li>ご入力いただいた内容は、迅速に確認し対応いたします。</li>
-    <li>お問い合わせ内容によっては、回答にお時間をいただく場合があります。</li>
-    <li>個人情報は厳重に管理し、目的以外には使用いたしません。</li>
-    <li>記入は必須です。</li>
-  </ul>
-</div>
+  <div class="notice">
+    <h2>注意事項</h2>
+    <ul>
+      <li>ご入力いただいた内容は、迅速に確認し対応いたします。</li>
+      <li>お問い合わせ内容によっては、回答にお時間をいただく場合があります。</li>
+      <li>個人情報は厳重に管理し、目的以外には使用いたしません。</li>
+      <li>記入は必須です。</li>
+    </ul>
+  </div>
 
-<%= form_with model: @contact, local: true do |form| %>
-  <% if @contact.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@contact.errors.count, "件のエラー") %>がありました:</h2>
-      <ul>
-        <% @contact.errors.full_messages.each do |message| %>
-          <li><%= message %></li>
-        <% end %>
-      </ul>
+  <%= form_with model: @contact, local: true do |form| %>
+    <% if @contact.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= pluralize(@contact.errors.count, "件のエラー") %>がありました:</h2>
+        <ul>
+          <% @contact.errors.full_messages.each do |message| %>
+            <li><%= message %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
+
+    <div class="field">
+      <%= form.label :email, 'メールアドレス', class: 'inline-label' %>
+      <%= form.email_field :email, required: true, class: 'input-field', placeholder: '例: sample@example.com' %>
+    </div>
+
+    <div class="field">
+      <%= form.label :content, 'お問い合わせ内容', class: 'inline-label' %>
+      <%= form.text_area :content, required: true, class: 'text-area', rows: 5, placeholder: '例: 追加してほしい機能や不具合について' %>
+      <div id="charCount">文字数 : 0</div>
+    </div>
+
+    <div class="actions">
+      <%= form.submit '送信', class: 'btn btn-primary' %>
     </div>
   <% end %>
 
-  <div class="field">
-    <%= form.label :email, 'メールアドレス', class: 'inline-label' %>
-    <%= form.email_field :email, required: true, class: 'input-field', placeholder: '例: sample@example.com' %>
-  </div>
-
-  <div class="field">
-    <%= form.label :content, 'お問い合わせ内容', class: 'inline-label' %>
-    <%= form.text_area :content, required: true, class: 'text-area', rows: 5, placeholder: '例: 追加してほしい機能や不具合について' %>
-    <div id="charCount">文字数 : 0</div>
-  </div>
-
-  <div class="actions">
-    <%= form.submit '送信', class: 'btn btn-primary' %>
-  </div>
-<% end %>
+  <% if current_user&.admin? || current_user == @contact.user %>
+    <%= link_to 'お問い合わせ内容ページ', contacts_path, class: 'btn content-page-btn' %>
+  <% end %>
 </div>
 
 <footer>

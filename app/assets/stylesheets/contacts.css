@@ -1,0 +1,121 @@
+/* 全体のページスタイル */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f9fafc;
+  padding: 20px;
+  color: #333;
+}
+
+/* ページタイトルのスタイル */
+h1 {
+  color: #34495e;
+  text-align: center;
+  font-size: 24px;
+  margin-bottom: 30px;
+}
+
+/* お問い合わせ内容のコンテナ */
+.contact-item {
+  background-color: #ffffff;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  padding: 15px;
+  margin-bottom: 20px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* 送信者のスタイル */
+.contact-sender {
+  font-weight: bold;
+  color: #2c3e50;
+  margin-bottom: 8px;
+}
+
+/* お問い合わせ内容のテキストスタイル */
+.contact-content {
+  margin-bottom: 10px;
+  color: #555;
+  line-height: 1.6;
+}
+
+/* タイムスタンプのスタイル */
+.contact-timestamp {
+  text-align: right;
+  font-size: 12px;
+  color: #888;
+}
+
+/* お問い合わせ内容がない場合のメッセージ */
+.no-contacts {
+  text-align: center;
+  color: #888;
+  font-style: italic;
+  margin-top: 40px;
+}
+
+/* 返信一覧のコンテナ */
+.replies {
+  background-color: #f7f7f7;
+  padding: 10px;
+  border-radius: 5px;
+  margin-top: 15px;
+  border-left: 4px solid #3498db;
+}
+
+/* 各返信のスタイル */
+.reply-item {
+  padding: 8px 10px;
+  border-bottom: 1px solid #e0e0e0;
+  color: #555;
+}
+
+.reply-item:last-child {
+  border-bottom: none;
+}
+
+.reply-item p {
+  margin: 5px 0;
+  color: #444;
+  font-size: 14px;
+}
+
+/* 返信フォームのフィールドスタイル */
+.field {
+  margin-top: 10px;
+}
+
+/* ボタンのスタイル */
+.btn.btn-secondary {
+  background-color: #3498db;
+  color: white;
+  padding: 8px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background-color 0.3s;
+}
+
+.btn.btn-secondary:hover {
+  background-color: #2980b9;
+}
+
+/* 返信フォームテキストエリアのスタイル */
+textarea {
+  width: 100%;
+  border: 1px solid #e0e0e0;
+  border-radius: 5px;
+  padding: 10px;
+  font-size: 14px;
+  resize: vertical;
+}
+
+/* タグの間隔を調整 */
+.contact-item .replies {
+  margin-top: 15px;
+}
+
+.contact-item .actions {
+  text-align: right;
+  margin-top: 10px;
+}

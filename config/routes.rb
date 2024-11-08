@@ -16,8 +16,12 @@ Rails.application.routes.draw do
     end
   end
 
+  resources :contacts do
+    post 'create_reply', on: :member
+  end
+
   resources :items
-  resources :contacts, only: [:new, :create]
+  resources :contacts, only: [:new, :create, :index]
   resources :updaters, only: [:new, :create, :index, :edit, :update]
   resources :password_resets, only: [:new, :create, :index]
 end

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2024_11_06_080927) do
+ActiveRecord::Schema[7.0].define(version: 2024_11_08_174402) do
   create_table "active_storage_attachments", charset: "utf8mb3", force: :cascade do |t|
     t.string "name", null: false
     t.string "record_type", null: false
@@ -64,6 +64,14 @@ ActiveRecord::Schema[7.0].define(version: 2024_11_06_080927) do
     t.datetime "last_accessed_at"
     t.index ["room_id"], name: "index_memberships_on_room_id"
     t.index ["user_id"], name: "index_memberships_on_user_id"
+  end
+
+  create_table "replies", charset: "utf8mb3", force: :cascade do |t|
+    t.bigint "contact_id", null: false
+    t.text "content"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["contact_id"], name: "index_replies_on_contact_id"
   end
 
   create_table "rooms", charset: "utf8mb3", force: :cascade do |t|
@@ -120,5 +128,6 @@ ActiveRecord::Schema[7.0].define(version: 2024_11_06_080927) do
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
   add_foreign_key "memberships", "rooms"
   add_foreign_key "memberships", "users", on_delete: :cascade
+  add_foreign_key "replies", "contacts"
   add_foreign_key "stocks", "rooms"
 end
