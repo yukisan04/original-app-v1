@@ -6,6 +6,7 @@ class User < ApplicationRecord
 
   has_many :memberships, dependent: :destroy # これにより、ユーザーが削除されたときに関連する membership も削除される
   has_many :rooms, through: :memberships
+  has_many :contacts
 
   validates :nickname, presence: true
   validates :email, presence: true, uniqueness: true

@@ -7,9 +7,8 @@ class ContactsController < ApplicationController
   end
 
   def create
-    @contact = Contact.new(contact_params)
+    @contact = current_user.contacts.new(contact_params)
     if @contact.save
-      # お問い合わせが成功した場合の処理
       redirect_to root_path, notice: 'お問い合わせが送信されました。'
     else
       render :new
