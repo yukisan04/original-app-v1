@@ -19,6 +19,8 @@
             <p><strong>管理者:</strong> <%= reply.content %></p>
           <% elsif reply.user == @contact.user %>
             <p><strong><%= reply.user.nickname %>:</strong> <%= reply.content %></p>
+            <!-- 編集ボタンを追加 -->
+            <%= link_to '編集', edit_contact_reply_path(@contact, reply), class: 'btn btn-edit' if current_user == reply.user || current_user.admin? %>
           <% else %>
             <p><%= reply.content %></p>
           <% end %>
