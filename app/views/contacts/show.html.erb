@@ -1,8 +1,9 @@
 <%= stylesheet_link_tag 'contacts1', media: 'all', 'data-turbo-track': 'reload' %>
 
-<h1>お問い合わせ詳細</h1>
+<!-- お問い合わせ詳細タイトル -->
+<h1 class="center-text">お問い合わせ詳細</h1>
 
-<div class="chat-room">
+<div class="chat-room center-content">
   <!-- 最初の問い合わせ内容の表示 -->
   <% if current_user.admin? || current_user == @contact.user %>
     <div class="initial-contact">
@@ -19,8 +20,16 @@
             <p><strong>管理者:</strong> <%= reply.content %></p>
           <% elsif reply.user == @contact.user %>
             <p><strong><%= reply.user.nickname %>:</strong> <%= reply.content %></p>
-            <!-- 編集ボタンを追加 -->
-            <%= link_to '編集', edit_contact_reply_path(@contact, reply), class: 'btn btn-edit' if current_user == reply.user || current_user.admin? %>
+
+            <!-- 編集済みメッセージの表示 -->
+            <% if reply.updated_at != reply.created_at %>
+              <p><em>（編集済）</em></p>
+            <% end %>
+
+            <!-- 編集ボタンをメッセージの右に配置 -->
+            <div class="edit-button-container">
+              <%= link_to '編集', contact_reply_path(@contact, reply), method: :patch, class: 'btn btn-edit' if current_user == reply.user || current_user.admin? %>
+            </div>
           <% else %>
             <p><%= reply.content %></p>
           <% end %>
@@ -37,9 +46,10 @@
   <% if (current_user.admin? || current_user == @contact.user) && (@contact.status == 'open' || @contact.status == 'reopened') %>
     <%= form_with(model: [@contact, @contact.replies.build], local: true) do |form| %>
       <div class="field">
-        <%= form.text_area :content, placeholder: '返信内容を入力...', required: true %>
+        <%= form.text_area :content, placeholder: '返信内容を入力...', required: true, id: 'reply_content' %>
+        <div id="char_count">文字数: 0</div> <!-- 文字数カウンター -->
       </div>
-      <div class="actions">
+      <div class="actions center-action">
         <%= form.submit '返信する' %>
       </div>
     <% end %>
@@ -52,7 +62,8 @@
     <%= link_to '解決済みにする', resolve_contact_path(@contact), method: :get, class: 'btn btn-close', data: { turbo_action: 'replace' } %>
   <% end %>
 
-  <%= link_to 'お問い合わせ一覧に戻る', contacts_path, class: 'btn btn-back' %>
+  <!-- 「お問い合わせ一覧に戻る」ボタン（画面右下に固定） -->
+  <%= link_to 'お問い合わせ一覧に戻る', contacts_path, class: 'btn btn-back fixed-back' %>
 
   <!-- 管理者が「再オープン」ボタンを表示 -->
   <% if current_user.admin? && @contact.status == 'closed' %>
@@ -69,4 +80,17 @@
 <%= turbo_stream_from @contact %>
 <%= turbo_stream.update 'contact-status' do %>
   <p>このお問い合わせは解決済みとしてマークされました。</p>
+<% end %>
+
+<!-- JavaScriptコード -->
+<%= javascript_tag do %>
+  document.addEventListener('DOMContentLoaded', function() {
+    var textarea = document.getElementById('reply_content');
+    var charCount = document.getElementById('char_count');
+
+    textarea.addEventListener('input', function() {
+      var currentLength = textarea.value.length;
+      charCount.textContent = '文字数: ' + currentLength;
+    });
+  });
 <% end %>

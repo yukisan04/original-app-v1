@@ -1,54 +1,163 @@
-/* チャットのレイアウト */
-.chat-room {
-  max-width: 800px;
-  margin: 0 auto;
+/* 背景色とページ全体の余白 */
+body {
+  background-color: #fafafa;  /* 明るいグレーで温かみ */
+  font-family: 'Arial', sans-serif;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;  /* 中央揃えのため縦方向 */
+  justify-content: flex-start; /* 上部に配置 */
+  align-items: center;
+  height: 100vh;
+}
+
+/* ヘッダーの中央揃え */
+.center-text {
+  font-size: 2rem;
+  color: #FF7043;  /* 優しいオレンジ色 */
+  margin-top: 20px;
+  font-weight: bold;
+}
+
+/* コンテンツエリア */
+.center-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #fff3e0; /* あたたかいオレンジ系 */
   padding: 20px;
-  background-color: #f9f9f9;
-  border: 1px solid #ddd;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 80%;
+  max-width: 900px;
+  margin: 20px auto;
+}
+
+/* 最初の問い合わせのスタイル */
+.initial-contact {
+  background-color: #fff8e1;  /* 優しい黄色系 */
+  padding: 15px;
   border-radius: 8px;
+  margin-bottom: 20px;
+  width: 100%;
+  box-sizing: border-box;
 }
 
+/* メッセージスタイル */
 .message {
-  background-color: #e1f7d5;
+  background-color: #ffebee;  /* 優しいピンク色 */
   padding: 10px;
-  margin: 10px 0;
-  border-radius: 5px;
+  margin-bottom: 15px;
+  border-radius: 8px;
+  width: 100%;
+  max-width: 800px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  box-sizing: border-box;
 }
 
-.message strong {
-  color: #5a5a5a;
+/* 返信フォーム */
+.field {
+  display: flex;
+  flex-direction: column;  /* 縦方向に要素を配置 */
+  position: relative;
+  width: 100%;
+  align-items: center;  /* 中央揃え */
 }
 
-.btn {
-  background-color: #ff8c00;
-  padding: 10px;
+/* textareaのスタイル */
+.field textarea {
+  width: 800px;  /* 横幅を調整 */
+  height: 120px;  /* 縦幅を調整 */
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  font-size: 14px;
+  margin-bottom: 15px;
+  background-color: #fff;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  box-sizing: border-box;
+  resize: none; /* サイズ変更を無効にする */
+}
+
+/* 文字数カウントを下に固定 */
+#char_count {
+  font-size: 14px;
+  color: #FF7043;  /* 温かみのある色 */
+  position: sticky;
+  bottom: 20px;  /* 返信ボタンの少し上に配置 */
+  left: 50%;
+  transform: translateX(-50%);
+  margin-top: 10px;
+  z-index: 1; /* 他の要素の下に表示されないように調整 */
+}
+
+/* 返信ボタン */
+.actions {
+  display: flex;
+  justify-content: center; /* 横方向中央揃え */
+  width: 100%; /* 親要素の幅に合わせる */
+}
+
+.actions input[type="submit"] {
+  background-color: #FF9800;  /* あたたかいオレンジ色 */
   color: white;
-  border-radius: 5px;
-  text-decoration: none;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 16px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease;
+  margin-top: 15px;
 }
 
-.btn:hover {
-  background-color: #e67e00;
-}
-
-.btn-back {
-  position: absolute;
+/* 固定ボタン */
+.fixed-back {
+  position: fixed;
   bottom: 20px;
   right: 20px;
+  background-color: #FFCC80;  /* 明るいオレンジ色 */
+  color: #333;
+  padding: 12px 25px;
+  border-radius: 8px;
+  font-size: 16px;
+  z-index: 100;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+.fixed-back:hover {
+  background-color: #FFB74D;  /* ホバー時の色 */
+}
+
+/* ボタン共通スタイル */
+.btn {
+  display: inline-block;
+  padding: 10px 20px;
+  border-radius: 8px;
+  text-align: center;
+  cursor: pointer;
+  text-decoration: none;
+  font-size: 14px;
+  transition: opacity 0.3s ease;
 }
 
 .btn-close {
-  background-color: #f44336;
+  background-color: #F44336; /* 赤色 */
+  color: white;
 }
 
-.btn-reply {
-  background-color: #4CAF50;
+.btn-reopen {
+  background-color: #8BC34A; /* 緑色 */
+  color: white;
 }
 
-.chat-room textarea {
-  width: 100%;
-  height: 100px;
-  border-radius: 5px;
-  padding: 10px;
-  margin-top: 10px;
+.btn-edit {
+  background-color: #FFEB3B; /* 黄色 */
+  color: black;
+}
+
+.btn:hover {
+  opacity: 0.8;
 }

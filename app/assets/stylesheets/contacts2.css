@@ -1,0 +1,118 @@
+/* ページ全体のスタイル */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 20px;
+  background-color: #e9f5fb;
+}
+
+/* フォームのコンテナ */
+.form-container {
+  background-color: #ffffff; /* 清潔感のある白 */
+  padding: 20px;
+  width: 400px;  /* スマホでも収まる幅 */
+  border-radius: 12px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.3s ease;
+}
+
+/* フォームのホバーエフェクト */
+.form-container:hover {
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);  /* ホバー時に影を強調 */
+}
+
+/* フォームラベル */
+.form-group label {
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: #ff7043;  /* 優しいオレンジ色 */
+  display: block;
+  margin-bottom: 8px;
+}
+
+/* テキストエリア */
+.form-control {
+  width: 100%;
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  font-size: 16px;
+  box-sizing: border-box;
+  background-color: #fff8e1; /* 優しい黄色系 */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  transition: border-color 0.3s ease;
+}
+
+.form-control:focus {
+  border-color: #ff7043; /* フォーカス時にオレンジ色のボーダー */
+  outline: none;
+}
+
+/* 返信ボタン */
+.btn-warning {
+  background-color: #ff9800; /* 明るいオレンジ色 */
+  color: white;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 18px;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease;
+}
+
+.btn-warning:hover {
+  background-color: #e65100; /* 濃いオレンジ */
+}
+
+/* 戻るボタン */
+.btn-primary {
+  background-color: #4caf50; /* 緑色 */
+  color: white;
+  padding: 12px 24px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-size: 18px;
+  margin-top: 20px;  /* 上に少し余白を追加 */
+  transition: background-color 0.3s ease;
+}
+
+.btn-primary:hover {
+  background-color: #388e3c; /* 濃い緑 */
+}
+
+/* 返信セクション */
+.reply-section {
+  background-color: #ffebee; /* 優しいピンク */
+  padding: 18px;
+  border-radius: 10px;
+  margin-bottom: 25px;
+  width: 90%;  /* 画面いっぱいに広げる */
+}
+
+.reply-section p {
+  margin: 0;
+  color: #ff7043; /* 優しいオレンジ色 */
+}
+
+.reply-section .user-info {
+  font-weight: bold;
+  color: #333;
+}
+
+/* レスポンシブデザイン */
+@media (max-width: 768px) {
+  .form-container {
+    width: 90%;  /* スマホの画面幅に合わせて広げる */
+  }
+
+  h1 {
+    font-size: 2rem;  /* 見出しを少し小さく */
+  }
+
+  .btn-warning,
+  .btn-primary {
+    width: 100%;  /* ボタンをフル幅に */
+    padding: 14px;
+  }
+}

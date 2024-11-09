@@ -1,10 +1,14 @@
 class ContactsController < ApplicationController
   before_action :authenticate_user!
   before_action :set_contact, only: [:show, :edit, :update, :destroy, :resolve, :reopen]
-  before_action :set_reply, only: [:update]
+  before_action :set_reply, only: [:edit, :update, :destroy]
 
   def index
     @contacts = Contact.order(created_at: :desc).page(params[:page]).per(10)
+  end
+
+  def edit
+
   end
 
   def new
@@ -27,13 +31,10 @@ class ContactsController < ApplicationController
   end
 
   def update
-    if @reply.update(reply_params.merge(edited: true))
-      respond_to do |format|
-        format.turbo_stream # Turbo Streamで部分更新
-        format.html { redirect_to contact_path(@reply.contact), notice: 'メッセージが更新されました。' }
-      end
+    if @reply.update(reply_params)
+      redirect_to @contact, notice: '返信が更新されました。'
     else
-      render :edit, status: :unprocessable_entity
+      render 'contacts/show', alert: '返信の更新に失敗しました。'
     end
   end
 
@@ -79,7 +80,9 @@ class ContactsController < ApplicationController
   end
 
   def set_reply
-    @reply = Reply.find(params[:id])
+    # 修正された部分: replyをcontact_idとreply_idで検索
+    @reply = @contact.replies.find_by(id: params[:id])
+    redirect_to contact_path(@contact), alert: "Reply not found" if @reply.nil?
   end
 
   def reply_params

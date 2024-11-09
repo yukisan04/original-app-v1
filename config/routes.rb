@@ -8,12 +8,12 @@ Rails.application.routes.draw do
       get 'resolve'
       patch 'reopen'
     end
-    resources :replies, only: [:create, :update]
+    resources :replies, only: [:create, :update, :edit, :show]  # showアクションをcontacts内にネスト
   end
 
   resources :rooms do
-    collection do
-      post 'join'
+    member do
+      post 'join'  # joinアクションをmember内に移動
     end
     resources :participants, only: [:index]
     resources :stocks, only: [:new, :create, :edit, :update, :destroy] do
