@@ -16,12 +16,12 @@ class ContactsController < ApplicationController
   end
 
   def create
-    @contact = current_user.contacts.new(contact_params)
+    @contact = current_user.contacts.build(contact_params)
 
     if @contact.save
-      redirect_to contacts_path, notice: 'お問い合わせが送信されました。'
+      redirect_to @contact, notice: 'お問い合わせが送信されました。'
     else
-      render :new, status: :unprocessable_entity
+      render :new, alert: 'お問い合わせの送信に失敗しました。'
     end
   end
 
@@ -36,16 +36,22 @@ class ContactsController < ApplicationController
   end
 
   def resolve
-    @contact.closed!
-    redirect_to contact_path(@contact), notice: 'お問い合わせが解決済みとなりました。'
+    # 状態を 'closed' に更新
+    if @contact.update(status: :closed)
+      respond_to do |format|
+        format.html { redirect_to @contact, notice: 'お問い合わせは解決済みとしてマークされました。' }
+        format.turbo_stream # Turbo stream を使って部分更新
+      end
+    else
+      redirect_to @contact, alert: '解決済みとしてマークする際にエラーが発生しました。'
+    end
   end
 
   def reopen
-    if current_user.admin?
-      @contact.update(status: :open)
-      redirect_to @contact, notice: '問い合わせが再度オープンにされました。'
+    if @contact.update(status: :reopened)
+      redirect_to @contact, notice: 'お問い合わせは再開されました。'
     else
-      redirect_to contacts_path, alert: '権限がありません。'
+      redirect_to @contact, alert: '再開に失敗しました。'
     end
   end
 
@@ -56,7 +62,8 @@ class ContactsController < ApplicationController
   end
 
   def set_contact
-    @contact = Contact.find(params[:id])
+    @contact = Contact.find_by(id: params[:id])
+    redirect_to root_path, alert: "Contact not found" if @contact.nil?
   end
 
   def reply_params

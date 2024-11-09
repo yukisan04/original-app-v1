@@ -21,6 +21,11 @@ class User < ApplicationRecord
   validate :password_cannot_be_full_width, if: -> { password.present? }
   validate :password_cannot_be_numeric_only, if: -> { password.present? }
 
+  # 管理者かどうかを判定するメソッド
+  def admin?
+    self.admin == true
+  end
+
   private
 
   # パスワードが全角の場合、エラーを追加する
