@@ -2,12 +2,13 @@
 <h1>お問い合わせ一覧</h1>
 
 <% @contacts.each do |contact| %>
-  <div class="contact-item">
-    <p><strong>メールアドレス:</strong> <%= contact.email %></p>
-    <p><strong>内容:</strong> <%= contact.content %></p>
-
-    <%= link_to 'チャットルームを開く', contact_path(contact), class: 'btn btn-primary' %>
-  </div>
+  <% if current_user.admin? || current_user == contact.user %>
+    <div class="contact-item">
+      <p><strong>メールアドレス:</strong> <%= contact.email %></p>
+      <p><strong>内容:</strong> <%= contact.content %></p>
+      <%= link_to 'チャットルームを開く', contact_path(contact), class: 'btn btn-primary' %>
+    </div>
+  <% end %>
 <% end %>
 
 <%= link_to '新規お問い合わせ', new_contact_path, class: 'btn btn-secondary' %>

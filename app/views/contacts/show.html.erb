@@ -4,31 +4,35 @@
 
 <div class="chat-room">
   <!-- 最初の問い合わせ内容の表示 -->
-  <div class="initial-contact">
-    <p><strong>お問い合わせ名:</strong> <%= @contact.user.nickname %></p>
-    <p><strong>お問い合わせ内容:</strong></p>
-    <p><%= @contact.content %></p>
-  </div>
+  <% if current_user.admin? || current_user == @contact.user %>
+    <div class="initial-contact">
+      <p><strong>お問い合わせ名:</strong> <%= @contact.user.nickname %></p>
+      <p><strong>お問い合わせ内容:</strong></p>
+      <p><%= @contact.content %></p>
+    </div>
 
-  <!-- チャット（返信）の表示 -->
-  <% if @contact.replies.any? %>
-    <% @contact.replies.each do |reply| %>
-      <div class="message">
-        <% if reply.user&.admin? %>
-          <p><strong>管理者:</strong> <%= reply.content %></p>
-        <% elsif reply.user&.nickname %>
-          <p><strong><%= reply.user.nickname %>:</strong> <%= reply.content %></p>
-        <% else %>
-          <p><%= reply.content %></p>
-        <% end %>
-      </div>
+    <!-- チャット（返信）の表示 -->
+    <% if @contact.replies.any? %>
+      <% @contact.replies.each do |reply| %>
+        <div class="message">
+          <% if reply.user&.admin? %>
+            <p><strong>管理者:</strong> <%= reply.content %></p>
+          <% elsif reply.user == @contact.user %>
+            <p><strong><%= reply.user.nickname %>:</strong> <%= reply.content %></p>
+          <% else %>
+            <p><%= reply.content %></p>
+          <% end %>
+        </div>
+      <% end %>
+    <% else %>
+      <p>まだ返信はありません。</p>
     <% end %>
   <% else %>
-    <p>まだ返信はありません。</p>
+    <p>このお問い合わせの詳細を閲覧する権限がありません。</p>
   <% end %>
 
   <!-- 返信フォーム（お問い合わせが「open」または「reopened」の場合のみ表示） -->
-  <% if @contact.status == 'open' || @contact.status == 'reopened' %>
+  <% if (current_user.admin? || current_user == @contact.user) && (@contact.status == 'open' || @contact.status == 'reopened') %>
     <%= form_with(model: [@contact, @contact.replies.build], local: true) do |form| %>
       <div class="field">
         <%= form.text_area :content, placeholder: '返信内容を入力...', required: true %>
@@ -37,7 +41,7 @@
         <%= form.submit '返信する' %>
       </div>
     <% end %>
-  <% else %>
+  <% elsif @contact.status == 'closed' %>
     <p>解決済みのため、これ以上返信はできません。</p>
   <% end %>
 
