@@ -26,7 +26,6 @@
               <p><em>（編集済）</em></p>
             <% end %>
 
-            <!-- 編集ボタンをメッセージの右に配置 -->
             <div class="edit-button-container">
               <%= link_to '編集', contact_reply_path(@contact, reply), method: :patch, class: 'btn btn-edit' if current_user == reply.user || current_user.admin? %>
             </div>

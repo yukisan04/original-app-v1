@@ -49,11 +49,10 @@ class ContactsController < ApplicationController
   end
 
   def resolve
-    # 状態を 'closed' に更新
     if @contact.update(status: :closed)
       respond_to do |format|
         format.html { redirect_to @contact, notice: 'お問い合わせは解決済みとしてマークされました。' }
-        format.turbo_stream # Turbo stream を使って部分更新
+        format.turbo_stream
       end
     else
       redirect_to @contact, alert: '解決済みとしてマークする際にエラーが発生しました。'
@@ -80,7 +79,6 @@ class ContactsController < ApplicationController
   end
 
   def set_reply
-    # 修正された部分: replyをcontact_idとreply_idで検索
     @reply = @contact.replies.find_by(id: params[:id])
     redirect_to contact_path(@contact), alert: "Reply not found" if @reply.nil?
   end
