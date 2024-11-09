@@ -1,6 +1,7 @@
 class ContactsController < ApplicationController
   before_action :authenticate_user!
   before_action :set_contact, only: [:show, :edit, :update, :destroy, :resolve, :reopen]
+  before_action :set_reply, only: [:update]
 
   def index
     @contacts = Contact.order(created_at: :desc).page(params[:page]).per(10)
@@ -22,6 +23,17 @@ class ContactsController < ApplicationController
       redirect_to @contact, notice: 'お問い合わせが送信されました。'
     else
       render :new, alert: 'お問い合わせの送信に失敗しました。'
+    end
+  end
+
+  def update
+    if @reply.update(reply_params.merge(edited: true))
+      respond_to do |format|
+        format.turbo_stream # Turbo Streamで部分更新
+        format.html { redirect_to contact_path(@reply.contact), notice: 'メッセージが更新されました。' }
+      end
+    else
+      render :edit, status: :unprocessable_entity
     end
   end
 
@@ -64,6 +76,10 @@ class ContactsController < ApplicationController
   def set_contact
     @contact = Contact.find_by(id: params[:id])
     redirect_to root_path, alert: "Contact not found" if @contact.nil?
+  end
+
+  def set_reply
+    @reply = Reply.find(params[:id])
   end
 
   def reply_params

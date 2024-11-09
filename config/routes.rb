@@ -8,7 +8,7 @@ Rails.application.routes.draw do
       get 'resolve'
       patch 'reopen'
     end
-    resources :replies, only: [:create]
+    resources :replies, only: [:create, :update]
   end
 
   resources :rooms do

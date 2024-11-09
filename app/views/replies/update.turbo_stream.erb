@@ -1,0 +1,3 @@
+<%= turbo_stream.replace "reply_#{@reply.id}" do %>
+  <%= render 'reply', reply: @reply %>
+<% end %>
