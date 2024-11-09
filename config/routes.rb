@@ -5,8 +5,8 @@ Rails.application.routes.draw do
 
   resources :contacts do
     member do
-      patch 'resolve'
-      get 'reopen'
+      get 'resolve'
+      patch 'reopen'
     end
     resources :replies, only: [:create]
   end

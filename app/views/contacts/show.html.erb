@@ -14,7 +14,9 @@
   <% if @contact.replies.any? %>
     <% @contact.replies.each do |reply| %>
       <div class="message">
-        <% if reply.user&.nickname %>
+        <% if reply.user&.admin? %>
+          <p><strong>管理者:</strong> <%= reply.content %></p>
+        <% elsif reply.user&.nickname %>
           <p><strong><%= reply.user.nickname %>:</strong> <%= reply.content %></p>
         <% else %>
           <p><%= reply.content %></p>
@@ -48,7 +50,7 @@
 
   <!-- 管理者が「再オープン」ボタンを表示 -->
   <% if current_user.admin? && @contact.status == 'closed' %>
-    <%= link_to '再オープン', reopen_contact_path(@contact), method: :patch, class: 'btn btn-reopen', data: { turbo_action: 'replace' } %>
+    <%= button_to '再オープン', reopen_contact_path(@contact), method: :patch, class: 'btn btn-reopen', data: { turbo_action: 'replace' } %>
   <% end %>
 
   <!-- 再オープンした場合のメッセージ -->
