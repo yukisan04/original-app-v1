@@ -12,7 +12,7 @@ Rails.application.routes.draw do
   end
 
   resources :rooms do
-    member do
+    collection do
       post 'join'
     end
     resources :participants, only: [:index]
