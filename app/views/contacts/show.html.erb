@@ -18,6 +18,9 @@
         <div class="message">
           <% if reply.user&.admin? %>
             <p><strong>管理者:</strong> <%= reply.content %></p>
+            <div class="edit-button-container">
+              <%= link_to '編集', contact_reply_path(@contact, reply), method: :patch, class: 'btn btn-edit' if current_user.admin? %>
+            </div>
           <% elsif reply.user == @contact.user %>
             <p><strong><%= reply.user.nickname %>:</strong> <%= reply.content %></p>
 

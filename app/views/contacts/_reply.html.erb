@@ -11,7 +11,8 @@
     <% end %>
   <% else %>
     <p><strong><%= reply.user.nickname %>:</strong> <%= reply.content %> <%= '(編集済み)' if reply.edited %></p>
-    <% if reply.user == current_user %>
+
+    <% if reply.user == current_user || current_user.admin? %>
       <%= link_to '編集', edit_reply_path(reply), class: 'btn btn-edit', data: { turbo_frame: "reply_#{reply.id}" } %>
     <% end %>
   <% end %>
