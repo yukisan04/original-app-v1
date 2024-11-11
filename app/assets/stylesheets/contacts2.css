@@ -131,10 +131,13 @@ body {
   .btn-danger {
     width: 50%;  /* ボタンをフル幅に */
     padding: 14px;
+    margin: 10px auto;  /* 上下余白を追加し、中央揃え */
   }
 
   .btn-primary {
-    padding: 8px 16px;  /* パディングを小さく */
+    padding: 10px 20px;  /* パディングを小さく */
     font-size: 14px;  /* フォントサイズを小さく */
+    width: 50%;  /* 幅を調整 */
+    margin: 20px auto;  /* 上下余白を追加し、中央揃え */
   }
 }
