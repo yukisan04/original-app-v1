@@ -128,9 +128,13 @@ body {
   }
 
   .btn-warning,
-  .btn-primary,
   .btn-danger {
-    width: 100%;  /* ボタンをフル幅に */
+    width: 50%;  /* ボタンをフル幅に */
     padding: 14px;
+  }
+
+  .btn-primary {
+    padding: 8px 16px;  /* パディングを小さく */
+    font-size: 14px;  /* フォントサイズを小さく */
   }
 }
