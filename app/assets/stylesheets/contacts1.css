@@ -161,3 +161,44 @@ body {
 .btn:hover {
   opacity: 0.8;
 }
+
+/* スマホ版対応: メッセージ内容を小さく表示 */
+@media (max-width: 768px) {
+  /* メッセージのサイズ調整 */
+  .message {
+    width: 90%;  /* 幅を90%に設定 */
+    font-size: 14px;  /* 文字サイズを小さく */
+    padding: 8px;  /* 内側の余白を小さく */
+  }
+
+  /* 返信フォーム */
+  .field textarea {
+    width: 100%;  /* 横幅を親要素に合わせる */
+    font-size: 14px;  /* 文字サイズを小さく */
+    padding: 10px;  /* 内側の余白を調整 */
+    height: 100px;  /* 高さを調整 */
+  }
+
+  /* 文字数カウントのフォントサイズを小さく */
+  #char_count {
+    font-size: 12px;
+  }
+
+  /* 返信ボタン */
+  .actions input[type="submit"] {
+    font-size: 14px;  /* ボタンの文字サイズを小さく */
+    padding: 8px 15px;  /* 内側の余白を調整 */
+  }
+
+  /* 固定ボタン */
+  .fixed-back {
+    font-size: 14px;  /* フォントサイズを小さく */
+    padding: 10px 20px;  /* 内側の余白を調整 */
+  }
+
+  /* メッセージの余白を調整 */
+  .initial-contact {
+    padding: 10px;  /* 余白を調整 */
+    margin-bottom: 15px;  /* 下の余白を調整 */
+  }
+}
