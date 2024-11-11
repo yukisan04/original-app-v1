@@ -65,6 +65,23 @@ body {
   background-color: #e65100; /* 濃いオレンジ */
 }
 
+/* 削除ボタン */
+.btn-danger {
+  background-color: #e57373; /* 優しい赤 */
+  color: white;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 18px;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease;
+}
+
+.btn-danger:hover {
+  background-color: #d32f2f; /* 濃い赤 */
+}
+
 /* 戻るボタン */
 .btn-primary {
   background-color: #4caf50; /* 緑色 */
@@ -111,7 +128,8 @@ body {
   }
 
   .btn-warning,
-  .btn-primary {
+  .btn-primary,
+  .btn-danger {
     width: 100%;  /* ボタンをフル幅に */
     padding: 14px;
   }

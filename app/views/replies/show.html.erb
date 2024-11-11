@@ -11,6 +11,7 @@
         <%= form.submit '返信を更新', class: 'btn btn-warning' %>
       </div>
     <% end %>
+    <%= button_to '返信を削除', contact_reply_path(@contact, @reply), method: :delete, class: 'btn-danger' %>
   </div>
 <% else %>
   <p>返信はまだありません。</p>
