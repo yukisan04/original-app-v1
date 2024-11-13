@@ -4,6 +4,11 @@ body {
   margin: 0;
   padding: 20px;
   background-color: #e9f5fb;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  box-sizing: border-box;
 }
 
 /* フォームのコンテナ */
@@ -14,6 +19,7 @@ body {
   border-radius: 12px;
   box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
   transition: box-shadow 0.3s ease;
+  margin: auto; /* 中央配置用 */
 }
 
 /* フォームのホバーエフェクト */
